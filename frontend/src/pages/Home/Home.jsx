@@ -1,4 +1,8 @@
-import logo from "../assets/cameleonWithe.png";
+import { Link } from "react-router-dom";
+import logo from "../../assets/cameleonWithe.png";
+import "./Home.css";
+
+// <Link to={"e-commerce"} >Site e-commerce</Link>
 
 const style = {
   main: {
@@ -36,6 +40,7 @@ export default function Home() {
         <img style={style.logo} src={logo} alt="logo" />
         <p style={{ ...style.logoText, left: -80, bottom: "30%" }}>coloses</p>
       </div>
+      <Link to="../e-commerce">Site e-commerce</Link>
     </main>
   );
 }
