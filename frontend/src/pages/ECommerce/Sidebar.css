@@ -10,8 +10,10 @@
 
 .collection {
   height: auto;
+  border: 1px solid #ccacac;
 }
 
 .storeInfo {
   height: auto;
+  border: 1px solid #ccacac;
 }

@@ -7,7 +7,6 @@ export default function Sidebar() {
   return (
     <div className="sidebar">
       <div className="collection">
-        {" "}
         <Collection />
       </div>
       <img src="/src/assets/ecommerce/img-sidebar.png" alt="sidebar" />

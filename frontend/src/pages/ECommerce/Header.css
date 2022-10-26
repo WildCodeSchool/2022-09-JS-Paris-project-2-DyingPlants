@@ -8,6 +8,7 @@ ul {
   flex-direction: row;
   list-style: none;
   gap: 1rem;
+  background-color: #ccacac;
 }
 
 li {
