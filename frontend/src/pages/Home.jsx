@@ -1,36 +1,41 @@
-import Counter from "@components/Counter";
-import logo from "@assets/logo.svg";
+import logo from "../assets/cameleonWithe.png";
+
+const style = {
+  main: {
+    backgroundColor: "black",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+  },
+  logoContainer: {
+    height: "120px",
+    width: "120px",
+    display: "flex",
+    justifyContent: "center",
+    position: "relative",
+  },
+  logo: {
+    maxHeight: "100%",
+    width: "auto",
+  },
+  logoText: {
+    color: "white",
+    position: "absolute",
+    fontFamily: "Poppins",
+    fontSize: "22px",
+  },
+};
 
 export default function Home() {
   return (
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>Hello Vite + React !</p>
-
-      <Counter />
-
-      <p>
-        Edit <code>App.jsx</code> and save to test HMR updates.
-      </p>
-      <p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        {" | "}
-        <a
-          className="App-link"
-          href="https://vitejs.dev/guide/features.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Vite Docs
-        </a>
-      </p>
-    </header>
+    <main style={style.main}>
+      <div style={style.logoContainer}>
+        <p style={{ ...style.logoText, right: -60, bottom: "2%" }}>generate</p>
+        <img style={style.logo} src={logo} alt="logo" />
+        <p style={{ ...style.logoText, left: -80, bottom: "30%" }}>coloses</p>
+      </div>
+    </main>
   );
 }
