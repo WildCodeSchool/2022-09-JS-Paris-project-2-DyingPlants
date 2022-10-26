@@ -1,0 +1,17 @@
+.sidebar {
+  width: 15%;
+  height: 100%;
+}
+
+.sidebar > img {
+  height: auto;
+  width: 100%;
+}
+
+.collection {
+  height: auto;
+}
+
+.storeInfo {
+  height: auto;
+}

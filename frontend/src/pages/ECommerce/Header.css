@@ -1,0 +1,16 @@
+body {
+  height: 20%;
+  width: 100%;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 1rem;
+}
+
+li {
+  padding: 1rem;
+  background-color: #ececec;
+}

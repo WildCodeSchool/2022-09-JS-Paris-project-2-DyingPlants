@@ -5,10 +5,15 @@ import Sidebar from "./Sidebar";
 import Products from "./Products";
 
 export default function Content() {
-    return (
-        <div>
-            <Banner />
-            <Sidebar />
-            <Products />
-        </div>);
+  return (
+    <div className="content">
+      <div>
+        <Banner />
+      </div>
+      <div className="sidebarProducts">
+        <Sidebar />
+        <Products />
+      </div>
+    </div>
+  );
 }

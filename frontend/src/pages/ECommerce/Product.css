@@ -1,0 +1,9 @@
+.product > img {
+  width: 50%;
+  height: auto;
+}
+
+.product > * {
+  width: 200px;
+  height: auto;
+}

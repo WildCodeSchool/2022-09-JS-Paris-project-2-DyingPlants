@@ -8,5 +8,6 @@ export default function ECommerce() {
     <div>
       <Header />
       <Content />
-    </div>);
+    </div>
+  );
 }
