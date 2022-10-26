@@ -1,14 +1,29 @@
 .products {
-  width: 85%;
+  width: 100%;
+  height: 200%;
   display: flex;
+  justify-content: center;
   flex-direction: column;
+  overflow-y: scroll;
 }
 
 .productList > * {
   width: 100%;
 }
-.productList {
+.productListItem {
   display: flex;
   flex-direction: row;
   overflow: scroll;
+  height: 150%;
+}
+
+.productList{
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .products{
+    width: 85%;
+  }
 }

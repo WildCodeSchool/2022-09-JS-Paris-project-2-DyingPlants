@@ -1,17 +1,22 @@
-body {
-  height: 20%;
-  width: 100%;
+.header{
+  position: fixed;
+  top:0;
+  z-index: 1;
+  height: 10%;
+  width: 100vw;
 }
 
-ul {
+.header>ul {
   display: flex;
   flex-direction: row;
   list-style: none;
   gap: 1rem;
   background-color: #ccacac;
+  width: 100%;
 }
 
 li {
   padding: 1rem;
   background-color: #ececec;
 }
+

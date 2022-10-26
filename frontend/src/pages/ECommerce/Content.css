@@ -1,9 +1,19 @@
 .content {
   width: 100%;
-  height: 90%;
+  height: 80%;
+  position: absolute;
+  top: 6.5%;
 }
 
 .sidebarProducts {
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px){
+  .sidebarProducts {
+    display: flex;
+    flex-direction: row;
+  }
 }

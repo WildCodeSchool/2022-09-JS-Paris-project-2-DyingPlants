@@ -1,9 +1,25 @@
-.product > img {
+.product > .productPic > img {
   width: 50%;
   height: auto;
+}
+
+.productPic{
+  display: flex;
+  justify-content: center;
 }
 
 .product > * {
   width: 200px;
   height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.product>.button>.buyButton{
+  width: 50%;
+}
+
+.product>.button{
+  display: flex;
+  justify-content: center;
 }

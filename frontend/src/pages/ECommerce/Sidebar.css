@@ -1,19 +1,36 @@
 .sidebar {
-  width: 15%;
-  height: 100%;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
 }
 
 .sidebar > img {
-  height: auto;
-  width: 100%;
+  order: -1;
+  height:fit-content;
+  width: 20%;
 }
 
-.collection {
+.collection{
   height: auto;
   border: 1px solid #ccacac;
+  width: 100%;
 }
 
 .storeInfo {
   height: auto;
   border: 1px solid #ccacac;
+}
+
+@media screen and (min-width:768px) {
+  .sidebar {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .sidebar > img {
+    height: auto;
+    width: 100%;
+  }
 }

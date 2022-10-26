@@ -1,0 +1,20 @@
+.currentProduct{
+    height: 100%;
+    width: auto;
+    display:flex;
+    flex-direction: column;
+}
+
+.currentProduct>.currentProductImg{
+    background-image: url('/src/assets/ecommerce/bracelet.jpg');
+    background-size: cover; 
+    height: 100px;
+    width: 100%;
+}
+
+@media screen and (min-width: 768px){
+    .currentProduct>.currentProductImg{
+        height: 200px;;
+        width: auto;
+    }
+}

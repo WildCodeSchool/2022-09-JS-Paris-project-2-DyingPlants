@@ -1,0 +1,22 @@
+.storeInfoContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height:100%;
+}
+
+.storeInfoContainer>p{
+    font-size: 0.8em;
+    text-align: justify;
+}
+
+.title_store_info{
+    font-size: 1em;
+}
+
+@media screen and (min-width: 768px) {
+    .storeInfoContainer>p{
+        font-size: initial;
+    }
+}

@@ -5,7 +5,7 @@ import Content from "./Content";
 
 export default function ECommerce() {
   return (
-    <div>
+    <div className="ecommerce">
       <Header />
       <Content />
     </div>

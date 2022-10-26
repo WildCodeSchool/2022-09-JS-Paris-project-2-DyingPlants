@@ -5,10 +5,10 @@ import PropTypes from "prop-types";
 export default function Product({ pic, title, price }) {
   return (
     <div className="product">
-      <img src={pic} alt={title} />
+      <div className="productPic"><img src={pic} alt={title} /></div>
       <h3>{title}</h3>
       <p>{price}</p>
-      <button type="button">Buy it now !</button>
+      <div className="button"><button className="buyButton" type="button">Buy it now !</button></div>
     </div>
   );
 }

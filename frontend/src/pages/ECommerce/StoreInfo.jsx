@@ -3,7 +3,7 @@ import "./StoreInfo.css";
 
 export default function StoreInfo() {
   return (
-    <div>
+    <div className="storeInfoContainer">
       <h2 className="title_store_info">INFOS BOUTIQUE</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore error
