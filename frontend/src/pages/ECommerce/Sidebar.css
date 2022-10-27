@@ -3,6 +3,7 @@
   height: auto;
   display: flex;
   flex-direction: row;
+ gap: 50px;
 }
 
 .sidebar > img {
@@ -13,13 +14,22 @@
 
 .collection{
   height: auto;
-  border: 1px solid #ccacac;
+  border: 2px solid #ccacac;
+  border-radius: 5px;
   width: 100%;
+ padding-top: 10px;
+ padding-bottom: 10px;
 }
 
 .storeInfo {
   height: auto;
-  border: 1px solid #ccacac;
+  border: 2px solid #ccacac;
+  border-radius: 5px;
+  padding-top: 10px;
+ padding-bottom: 10px;
+ text-align: center;
+ padding: 10px;
+
 }
 
 @media screen and (min-width:768px) {

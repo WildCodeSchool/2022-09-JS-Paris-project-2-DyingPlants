@@ -20,6 +20,12 @@
 .productList{
   display: flex;
   flex-direction: column;
+  margin: 10px;
+}
+.titleProduct{
+  text-align: center;
+  border: 2px solid  #ccacac;
+  border-radius: 5px;
 }
 
 @media screen and (min-width: 768px) {

@@ -110,7 +110,7 @@ export default function Products() {
     <div className="products">
       <CurrentProduct />
       <div className="productList">
-        <h3>Rings</h3>
+        <h3 className= "titleProduct">Rings</h3>
         <div className="productListItem">
         {rings.map((i) => {
           return <Product pic={i.picture} title={i.title} price={i.price} />;
@@ -118,7 +118,7 @@ export default function Products() {
         </div>
       </div>
       <div className="productList">
-        <h3>Bracelets</h3>
+        <h3 className= "titleProduct">Bracelets</h3>
         <div className="productListItem">
         {rings.map((i) => {
           return <Product pic={i.picture} title={i.title} price={i.price} />;
@@ -126,7 +126,7 @@ export default function Products() {
         </div>
       </div>
       <div className="productList">
-        <h3>Necklace</h3>
+        <h3 className= "titleProduct">Necklace</h3>
         <div className="productListItem">
         {rings.map((i) => {
           return <Product pic={i.picture} title={i.title} price={i.price} />;
