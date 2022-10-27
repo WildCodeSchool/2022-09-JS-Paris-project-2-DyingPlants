@@ -1,11 +1,14 @@
-.footer {
-  position: fixed;
-  bottom:0;
-  width: 100%;
+.footer>ul{
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  gap:100px;
-  height: 5%;
-  background-color: #ccacac;
+  list-style: none;
+  gap: 1rem;
+  background-color: grey;
+  width: 100%;
+}
+
+.footer>p{
+  height: 100%;
+  background-color: lightslategrey;
 }

@@ -3,6 +3,7 @@ import "./Content.css";
 import Banner from "./Banner";
 import Sidebar from "./Sidebar";
 import Products from "./Products";
+import Footer from "./Footer"
 
 export default function Content() {
   return (
@@ -14,6 +15,7 @@ export default function Content() {
         <Sidebar />
         <Products />
       </div>
+      <Footer />
     </div>
   );
 }

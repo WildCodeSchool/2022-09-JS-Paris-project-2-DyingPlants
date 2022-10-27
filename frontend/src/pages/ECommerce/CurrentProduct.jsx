@@ -3,10 +3,8 @@ import "./CurrentProduct.css";
 
 export default function CurrentProduct() {
   return (
-  <div className="currentProduct">
-    
-    <div className="currentProductImg">
+    <div className="currentProduct">
+      <div className="currentProductImg" />
     </div>
-    </div>
-    )
+  );
 }

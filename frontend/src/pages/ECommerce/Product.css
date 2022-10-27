@@ -3,7 +3,7 @@
   height: auto;
 }
 
-.productPic{
+.productPic {
   display: flex;
   justify-content: center;
 }
@@ -13,13 +13,25 @@
   height: auto;
   display: flex;
   justify-content: center;
+  background-color: lightgrey;
+  opacity: 0.7;
 }
 
-.product>.button>.buyButton{
+.product{
+  padding: 1%;
+  border-radius: 5%;;
+}
+
+.product >h3{
+  color: #565656;
+}
+
+.product > .button > .buyButton {
   width: 50%;
 }
 
-.product>.button{
+.product > .button {
   display: flex;
   justify-content: center;
+  padding-bottom: 2%;
 }

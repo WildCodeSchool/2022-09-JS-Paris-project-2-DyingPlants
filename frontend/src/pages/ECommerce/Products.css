@@ -17,19 +17,25 @@
   height: 150%;
 }
 
-.productList{
+.productList {
   display: flex;
   flex-direction: column;
-  margin: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-.titleProduct{
+
+.titleProduct {
+  margin-bottom: 10px;;
   text-align: center;
-  border: 2px solid  #ccacac;
+  background-color: lightgray;
   border-radius: 5px;
+  color: #565656;
+  padding: 2%;
+  width: 96%;;
 }
 
 @media screen and (min-width: 768px) {
-  .products{
+  .products {
     width: 85%;
   }
 }

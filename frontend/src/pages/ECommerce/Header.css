@@ -1,22 +1,22 @@
-.header{
+.header {
   position: fixed;
-  top:0;
+  top: 0;
   z-index: 1;
   width: 100%;
-  height:10%;
+  height: 10%;
 }
 
-.header>ul {
+.header > ul {
   display: flex;
   flex-direction: row;
   list-style: none;
   gap: 1rem;
-  background-color: #ccacac;
+  background-color: grey;
   width: 100%;
 }
 
 li {
   padding: 1rem;
-  background-color: #ececec;
+  color: #565656;
+  background-color: lightgrey;
 }
-

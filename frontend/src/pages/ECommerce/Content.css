@@ -11,7 +11,7 @@
   width: 100%;
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
   .sidebarProducts {
     display: flex;
     flex-direction: row;

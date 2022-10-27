@@ -3,12 +3,12 @@ import "./Footer.css";
 
 export default function Footer() {
   return (
-      <div className="footer">
-      
-        <p>Contact us</p>
-        <p>About us</p>
-        <p>Autre</p>
-      
-      </div>
+    <div className="footer">
+    <ul>
+      <li>Contact Us</li>
+      <li>About Us</li>
+      <li>Autre</li>
+    </ul>
+  </div>
   );
 }
