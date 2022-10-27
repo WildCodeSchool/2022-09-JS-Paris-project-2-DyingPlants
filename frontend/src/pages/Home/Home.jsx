@@ -41,6 +41,7 @@ export default function Home() {
         <p style={{ ...style.logoText, left: -80, bottom: "30%" }}>coloses</p>
       </div>
       <Link to="../e-commerce">Site e-commerce</Link>
+      <Link to="../Restaurant">Site restaurant</Link>
     </main>
   );
 }
