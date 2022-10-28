@@ -27,9 +27,10 @@
 .titleProduct {
   margin-bottom: 10px;;
   text-align: center;
-  background-color: lightgray;
+  background-color: #e6ae7c;
   border-radius: 5px;
-  color: #565656;
+  color: whitesmoke;
+  font-size: 25px;
   padding: 2%;
   width: 96%;;
 }

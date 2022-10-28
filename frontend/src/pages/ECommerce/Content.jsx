@@ -8,7 +8,7 @@ import Footer from "./Footer"
 export default function Content() {
   return (
     <div className="content">
-      <div>
+      <div className="banner">
         <Banner />
       </div>
       <div className="sidebarProducts">

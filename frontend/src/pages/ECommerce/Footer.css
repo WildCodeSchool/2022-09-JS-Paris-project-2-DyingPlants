@@ -4,11 +4,15 @@
   justify-content: center;
   list-style: none;
   gap: 1rem;
-  background-color: grey;
+  background-color: #e6ae7c;
   width: 100%;
 }
 
 .footer>p{
   height: 100%;
-  background-color: lightslategrey;
+}
+li{
+  color: whitesmoke;
+  font-size: 25px;
+  
 }

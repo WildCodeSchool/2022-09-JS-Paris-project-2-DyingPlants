@@ -1,24 +1,32 @@
 .bannerImg {
   background-image: url("/src/assets/ecommerce/banner_white.jpg");
   background-size: cover;
-  height: auto;
-  width: 100%;
+  height: 100%;
+  width: 98%;
+  margin: 1%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  border-radius: 5px 20px 5px 20px;
+}
+
+.bannerContainer {
+  height: 100%;
 }
 
 .bannerImg > h1 {
-  font-size: 2em;
-  border: 0.3rem solid #565656;
+  font-size: 2.5em;
+  border: 0.3rem solid #e6ae7c;
   padding: 0.3em;
-  margin: 10%;
-  color: #565656;
+  color: #e6ae7c;
+  margin-bottom: 5%;
+
 }
 
 @media screen and (min-width: 768px) {
   .bannerImg > h1 {
     font-size: 5em;
     padding: 0.2em;
+    margin-bottom: 2%;
   }
 }

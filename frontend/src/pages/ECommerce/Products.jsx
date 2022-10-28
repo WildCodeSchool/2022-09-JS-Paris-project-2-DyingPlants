@@ -133,7 +133,7 @@ export default function Products() {
           })}
         </div>
       </div>
-      <p>See more </p>
+      <p></p>
     </div>
   );
 }
