@@ -2,6 +2,8 @@
 
 #page {
   background-color: rgb(230, 230, 230);
+  font-family: "Fjalla One", sans-serif;
+  min-width: 364px;
 }
 
 /*HEADER*/
@@ -16,12 +18,34 @@
 }
 
 #topBar p {
-  padding: 5px 10px 5px 10px;
+  padding: 5px 10px;
   border: 2px solid black;
 }
 
 #burgerMenu {
   height: 40px;
+  display: none;
+}
+
+#navUl {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.linkNav {
+  margin: 0 25px;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .linkNav {
+    display: none;
+  }
+
+  #burgerMenu {
+    display: block;
+  }
 }
 
 #buttonAdd {
@@ -43,14 +67,25 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#mainPicture {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+  border-bottom-left-radius: 100px;
 }
 
 .restoSection1 h2 {
-  margin: 40px 0 0 40px;
-  font-size: 40px;
+  margin: 40px 40px 0;
+  font-size: 30px;
 }
 
 .restoSection1 p {
+  font-size: 20px;
   margin: 20px 50px 0 40px;
 }
 
@@ -65,11 +100,10 @@
   border-radius: 10px;
 }
 
-#mainPicture {
-  width: 100%;
-  max-height: 260px;
-  background-color: rgb(255, 255, 255);
-  border-bottom-left-radius: 100px;
+@media screen and (min-width: 900px) {
+  #mainPicture {
+    border-bottom-right-radius: 100px;
+  }
 }
 
 /*SECTION 2*/
@@ -77,14 +111,18 @@
 .restoSection2 {
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+  margin-top: 50px;
 }
 
 #topElements {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
 #topElements h3 {
-  margin: 70px 0 0 40px;
+  margin: 0 auto;
   font-size: 30px;
 }
 
@@ -113,8 +151,14 @@
 /*SECTION 2 PRODUCTS BLOCKS*/
 
 .itemBlock {
-  margin: 30px 0 30px 0;
   display: flex;
+  align-items: center;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 360px;
+  height: 150px;
+  border-radius: 20px;
 }
 
 .itemPicture {
@@ -156,6 +200,16 @@
   background-color: rgb(148, 148, 148);
   border: none;
   border-radius: 8px;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  #allItems {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1250px;
+    margin: 0 auto;
+  }
 }
 
 #buttonSeeFull {
@@ -165,7 +219,7 @@
   font-size: 16px;
   border-radius: 5px;
   margin-bottom: 70px;
-  margin-top: 20px;
+  margin-top: 30px;
   background-color: rgb(148, 148, 148);
   border: none;
   border-radius: 10px;
@@ -177,11 +231,13 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .restoSection3 img {
-  width: 300px;
-  height: 350px;
+  width: 50%;
+  height: auto;
   background-color: white;
   margin: 0 auto;
   border-radius: 10px;
@@ -193,6 +249,7 @@
 }
 
 .restoSection3 p {
+  font-size: 20px;
   margin: 20px 50px 0 40px;
 }
 
@@ -207,13 +264,24 @@
   border-radius: 10px;
 }
 
+@media screen and (min-width: 768px) {
+  .restoSection3 {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 70px;
+  }
+}
+
 /*FOOTER*/
 
 #restoFooter {
   display: flex;
   align-items: center;
+
   background-color: rgb(148, 148, 148);
   border-top-right-radius: 80px 60px;
+  max-width: 1250px;
+  margin: auto;
 }
 
 #restoFooter img {
@@ -221,7 +289,32 @@
   background-color: rgb(85, 85, 85);
 }
 
+#secFootPic {
+  display: none;
+}
+
 #restoFooter h3 {
   font-size: 25px;
   margin: 0 30px 0 35px;
+}
+
+@media screen and (min-width: 1250px) {
+  #restoFooter {
+    border-top-left-radius: 80px 60px;
+  }
+
+  #firstFootPic {
+    border-top-left-radius: 80px 60px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #restoFooter {
+    justify-content: space-between;
+  }
+
+  #secFootPic {
+    display: block;
+    border-top-right-radius: 80px 60px;
+  }
 }
