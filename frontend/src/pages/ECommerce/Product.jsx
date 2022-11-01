@@ -2,9 +2,9 @@ import React from "react";
 import "./Product.css";
 import PropTypes from "prop-types";
 
-export default function Product({ pic, title, price }) {
+export default function Product({ mykey, pic, title, price }) {
   return (
-    <div className="product">
+    <div key={mykey} className="product">
       <div className="productPic">
         <img src={pic} alt={title} />
       </div>
@@ -20,6 +20,7 @@ export default function Product({ pic, title, price }) {
 }
 
 Product.propTypes = {
+  key: PropTypes.number,
   pic: PropTypes.string,
   title: PropTypes.string,
   price: PropTypes.number,
