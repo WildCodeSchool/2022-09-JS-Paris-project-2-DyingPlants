@@ -69,6 +69,9 @@
   flex-direction: column;
   max-width: 900px;
   margin: 0 auto;
+  background-color: white;
+  padding-bottom: 40px;
+  border-bottom-left-radius: 20px;
 }
 
 #mainPicture {
@@ -92,7 +95,7 @@
 .restoSection1 button {
   width: 160px;
   height: 50px;
-  padding: 5px 0 5px 0;
+  padding: 5px 0;
   margin: 40px 0 0 40px;
   font-size: 20px;
   background-color: rgb(148, 148, 148);
@@ -101,8 +104,8 @@
 }
 
 @media screen and (min-width: 900px) {
-  #mainPicture {
-    border-bottom-right-radius: 100px;
+  .restoSection1 {
+    border-bottom-right-radius: 20px;
   }
 }
 
@@ -112,7 +115,7 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 70px;
 }
 
 #topElements {
@@ -129,7 +132,7 @@
 .buttonSec2-1 {
   width: 100px;
   height: 50px;
-  padding: 5px 0 5px 0;
+  padding: 5px 0;
   margin: 30px 0 20px 20px;
   font-size: 20px;
   background-color: rgb(148, 148, 148);
@@ -140,7 +143,7 @@
 .buttonSec2 {
   width: 100px;
   height: 50px;
-  padding: 5px 0 5px 0;
+  padding: 5px 0;
   margin: 30px 0 20px 20px;
   font-size: 20px;
   background-color: rgb(255, 255, 255);
@@ -213,13 +216,13 @@
 }
 
 #buttonSeeFull {
-  width: 150px;
-  height: 40px;
+  width: 160px;
+  height: 50px;
   margin: 0 auto;
-  font-size: 16px;
+  font-size: 20px;
   border-radius: 5px;
   margin-bottom: 70px;
-  margin-top: 30px;
+  margin-top: 40px;
   background-color: rgb(148, 148, 148);
   border: none;
   border-radius: 10px;
@@ -233,6 +236,10 @@
   flex-direction: column;
   max-width: 900px;
   margin: 0 auto;
+  background-color: white;
+  padding: 40px 0;
+  margin-bottom: 40px;
+  border-radius: 20px;
 }
 
 .restoSection3 img {
@@ -256,7 +263,7 @@
 .restoSection3 button {
   width: 160px;
   height: 50px;
-  margin: 40px 0 60px 40px;
+  margin: 40px 0 0 40px;
   font-size: 20px;
   border-radius: 5px;
   background-color: rgb(148, 148, 148);
@@ -270,7 +277,13 @@
     align-items: center;
     margin-bottom: 70px;
   }
+
+  .restoSection3 {
+    padding: 40px;
+  }
 }
+
+
 
 /*FOOTER*/
 
