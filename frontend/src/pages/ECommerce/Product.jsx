@@ -20,7 +20,7 @@ export default function Product({ mykey, pic, title, price }) {
 }
 
 Product.propTypes = {
-  key: PropTypes.number,
+  mykey: PropTypes.number,
   pic: PropTypes.string,
   title: PropTypes.string,
   price: PropTypes.number,
