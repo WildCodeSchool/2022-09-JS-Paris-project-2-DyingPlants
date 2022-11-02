@@ -21,7 +21,7 @@
   width: 100%;
 }
 
-li {
+.navBarEcommerce > li {
   padding: 1rem;
   color: whitesmoke;
   font-size: 25px;
@@ -224,7 +224,8 @@ li {
 .footer > p {
   height: 100%;
 }
-li {
+
+.navBarEcommerce > li {
   color: whitesmoke;
   font-size: 25px;
 }
