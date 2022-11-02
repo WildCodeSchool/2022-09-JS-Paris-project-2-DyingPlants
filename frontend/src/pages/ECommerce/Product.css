@@ -1,0 +1,37 @@
+.product > .productPic > img {
+  width: 50%;
+  height: auto;
+}
+
+.productPic {
+  display: flex;
+  justify-content: center;
+}
+
+.product > * {
+  width: 200px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  background-color: lightgrey;
+  opacity: 0.7;
+}
+
+.product {
+  padding: 1%;
+  border-radius: 5%;
+}
+
+.product > h3 {
+  color: #565656;
+}
+
+.product > .button > .buyButton {
+  width: 50%;
+}
+
+.product > .button {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2%;
+}
