@@ -1,6 +1,7 @@
 import shop from "../../assets/imgPageResto/cadi.png";
 import burgerMenu from "../../assets/imgPageResto/burgerMenu.png";
 import imgResto1 from "../../assets/imgPageResto/imgResto1.jpg";
+import imgDesk from "../../assets/imgPageResto/imgRestoDesk.jpg";
 import plat1 from "../../assets/imgPageResto/plat1.jpg";
 import plat2 from "../../assets/imgPageResto/plat2.jpg";
 import plat3 from "../../assets/imgPageResto/plat3.jpg";
@@ -36,7 +37,8 @@ export default function Restaurant() {
       </header>
       <main className="restoMain">
         <section className="restoSection1">
-          <img src={imgResto1} alt="item" id="mainPicture" />
+          <img src={imgResto1} alt="item food" id="mainPicture" />
+          <img src={imgDesk} alt="item food" id="mainPicDesk" />
           <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis

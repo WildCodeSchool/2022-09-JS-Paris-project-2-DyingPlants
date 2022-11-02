@@ -67,7 +67,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  max-width: 900px;
+  max-width: 1400px;
   margin: 0 auto;
   background-color: white;
   padding-bottom: 40px;
@@ -78,8 +78,11 @@
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
-  background-color: rgb(255, 255, 255);
   border-bottom-left-radius: 100px;
+}
+
+#mainPicDesk {
+  display: none;
 }
 
 .restoSection1 h2 {
@@ -89,7 +92,7 @@
 
 .restoSection1 p {
   font-size: 20px;
-  margin: 20px 50px 0 40px;
+  margin: 20px 40px 0;
 }
 
 .restoSection1 button {
@@ -106,6 +109,29 @@
 @media screen and (min-width: 900px) {
   .restoSection1 {
     border-bottom-right-radius: 20px;
+  }
+
+  #mainPicture {
+    display: none;
+  }
+
+  #mainPicDesk {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    border-bottom-left-radius: 100px;
+  }
+
+  .restoSection1 h2 {
+    margin: 40px 60px 0;
+  }
+
+  .restoSection1 p {
+    margin: 20px 150px 0 60px;
+  }
+
+  .restoSection1 button {
+    margin-left: 60px;
   }
 }
 
@@ -234,7 +260,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   background-color: white;
   padding: 40px 0;
@@ -283,17 +309,13 @@
   }
 }
 
-
-
 /*FOOTER*/
 
 #restoFooter {
   display: flex;
   align-items: center;
-
   background-color: rgb(148, 148, 148);
   border-top-right-radius: 80px 60px;
-  max-width: 1250px;
   margin: auto;
 }
 
@@ -313,10 +335,6 @@
 
 @media screen and (min-width: 1250px) {
   #restoFooter {
-    border-top-left-radius: 80px 60px;
-  }
-
-  #firstFootPic {
     border-top-left-radius: 80px 60px;
   }
 }
