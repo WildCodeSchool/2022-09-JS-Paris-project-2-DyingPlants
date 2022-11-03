@@ -109,7 +109,7 @@ export default function ECommerce() {
   return (
     <div className="ecommerce">
       <div className="header">
-        <ul>
+        <ul className="navBarEcommerce">
           <li>Home</li>
           <li>Shop</li>
           <li>Blog</li>
@@ -199,7 +199,7 @@ export default function ECommerce() {
           </div>
         </div>
         <div className="footer">
-          <ul>
+          <ul className="navBarEcommerce">
             <li>Contact Us</li>
             <li>About Us</li>
             <li>Autre</li>
