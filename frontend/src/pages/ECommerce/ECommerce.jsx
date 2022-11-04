@@ -1,6 +1,229 @@
-import React from "react";
+import uuid from "react-uuid";
 import "./ECommerce.css";
+import Product from "./Product";
 
 export default function ECommerce() {
-  return <div>E-commerce</div>;
+  const handleClickRapid = async () => {
+    /* const options = {
+      method: "GET",
+      url: "https://random-palette-generator.p.rapidapi.com/palette/Monochromatic/1/5",
+      headers: {
+        "X-RapidAPI-Key": "f6b8a1ebfamsh0541ebd7a0ace36p1b5919jsnc2c6a020858d",
+        "X-RapidAPI-Host": "random-palette-generator.p.rapidapi.com",
+      },
+    };
+    const result = await fetch(
+      "https://random-palette-generator.p.rapidapi.com/palette/1/5",
+      options
+    );
+    const resultJson = await result.json();
+     console.log(resultJson); */
+  };
+
+  handleClickRapid();
+  const rings = [
+    {
+      picture: "/src/assets/ecommerce/ring_1.png",
+      title: "Product",
+      price: 300,
+    },
+    {
+      picture: "/src/assets/ecommerce/ring_1.png",
+      title: "Product",
+      price: 300,
+    },
+    {
+      picture: "/src/assets/ecommerce/ring_1.png",
+      title: "Product",
+      price: 300,
+    },
+    {
+      picture: "/src/assets/ecommerce/ring_1.png",
+      title: "Product",
+      price: 300,
+    },
+    {
+      picture: "/src/assets/ecommerce/ring_1.png",
+      title: "Product",
+      price: 300,
+    },
+    {
+      picture: "/src/assets/ecommerce/ring_1.png",
+      title: "Product",
+      price: 300,
+    },
+    {
+      picture: "/src/assets/ecommerce/ring_1.png",
+      title: "Product",
+      price: 300,
+    },
+    {
+      picture: "/src/assets/ecommerce/ring_1.png",
+      title: "Product",
+      price: 300,
+    },
+    {
+      picture: "/src/assets/ecommerce/ring_1.png",
+      title: "Product",
+      price: 300,
+    },
+    {
+      picture: "/src/assets/ecommerce/ring_1.png",
+      title: "Product",
+      price: 300,
+    },
+    {
+      picture: "/src/assets/ecommerce/ring_1.png",
+      title: "Product",
+      price: 300,
+    },
+    {
+      picture: "/src/assets/ecommerce/ring_1.png",
+      title: "Product",
+      price: 300,
+    },
+    {
+      picture: "/src/assets/ecommerce/ring_1.png",
+      title: "Product",
+      price: 300,
+    },
+    {
+      picture: "/src/assets/ecommerce/ring_1.png",
+      title: "Product",
+      price: 300,
+    },
+    {
+      picture: "/src/assets/ecommerce/ring_1.png",
+      title: "Product",
+      price: 300,
+    },
+    {
+      picture: "/src/assets/ecommerce/ring_1.png",
+      title: "Product",
+      price: 300,
+    },
+    {
+      picture: "/src/assets/ecommerce/ring_1.png",
+      title: "Product",
+      price: 300,
+    },
+    {
+      picture: "/src/assets/ecommerce/ring_1.png",
+      title: "Product",
+      price: 300,
+    },
+    {
+      picture: "/src/assets/ecommerce/ring_1.png",
+      title: "Product",
+      price: 300,
+    },
+    {
+      picture: "/src/assets/ecommerce/ring_1.png",
+      title: "Product",
+      price: 300,
+    },
+  ];
+
+  return (
+    <div className="ecommerce">
+      <div className="header">
+        <ul className="navBarEcommerce">
+          <li>Home</li>
+          <li>Shop</li>
+          <li>Blog</li>
+        </ul>
+      </div>
+      <div className="content">
+        <div className="banner">
+          <div className="bannerContainer">
+            <div className="bannerImg">
+              <h1>Name of your site</h1>
+            </div>
+          </div>
+        </div>
+        <div className="sidebarProducts">
+          <div className="sidebar">
+            <div className="collection">
+              <div className="collectionContainer">
+                <h2 className="title_collection">COLLECTIONS</h2>
+                <p>Collection printemps</p>
+                <p>Collection été</p>
+                <p>Collection automne</p>
+                <p>Collection hiver</p>
+              </div>
+            </div>
+            <img src="/src/assets/ecommerce/img-sidebar.png" alt="sidebar" />
+            <div className="storeInfo">
+              <div className="storeInfoContainer">
+                <h2 className="title_store_info">INFOS BOUTIQUE</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Tempore error tempora autem nam molestias quasi ducimus
+                  voluptates, beatae obcaecati eum expedita vero praesentium
+                  totam non ipsa soluta deserunt? Cupiditate, facilis!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="products">
+            <div className="currentProduct">
+              <div className="currentProductImg" />
+            </div>
+            <div className="productList">
+              <h3 className="titleProduct">Rings</h3>
+              <div className="productListItem">
+                {rings.map((i) => {
+                  return (
+                    <Product
+                      key={uuid()}
+                      pic={i.picture}
+                      title={i.title}
+                      price={i.price}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+            <div className="productList">
+              <h3 className="titleProduct">Bracelets</h3>
+              <div className="productListItem">
+                {rings.map((i) => {
+                  return (
+                    <Product
+                      key={uuid()}
+                      pic={i.picture}
+                      title={i.title}
+                      price={i.price}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+            <div className="productList">
+              <h3 className="titleProduct">Necklace</h3>
+              <div className="productListItem">
+                {rings.map((i) => {
+                  return (
+                    <Product
+                      key={uuid()}
+                      pic={i.picture}
+                      title={i.title}
+                      price={i.price}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="footer">
+          <ul className="navBarEcommerce">
+            <li>Contact Us</li>
+            <li>About Us</li>
+            <li>Autre</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
 }

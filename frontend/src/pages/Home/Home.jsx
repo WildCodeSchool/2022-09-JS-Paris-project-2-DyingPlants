@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/cameleonWithe.png";
 import "./Home.css";
 
-// <Link to={"e-commerce"} >Site e-commerce</Link>
-
 const style = {
   main: {
     backgroundColor: "black",
@@ -41,7 +39,7 @@ export default function Home() {
         <p style={{ ...style.logoText, left: -80, bottom: "30%" }}>coloses</p>
       </div>
       <Link to="../e-commerce">Site e-commerce</Link>
-      <Link to="../startup">Site startup</Link>
+      <Link to="../Restaurant">Site restaurant</Link>
     </main>
   );
 }
