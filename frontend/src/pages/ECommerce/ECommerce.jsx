@@ -1,26 +1,8 @@
-import uuid from "react-uuid";
 import "./ECommerce.css";
+import uuid from "react-uuid";
 import Product from "./Product";
 
 export default function ECommerce() {
-  const handleClickRapid = async () => {
-    /* const options = {
-      method: "GET",
-      url: "https://random-palette-generator.p.rapidapi.com/palette/Monochromatic/1/5",
-      headers: {
-        "X-RapidAPI-Key": "f6b8a1ebfamsh0541ebd7a0ace36p1b5919jsnc2c6a020858d",
-        "X-RapidAPI-Host": "random-palette-generator.p.rapidapi.com",
-      },
-    };
-    const result = await fetch(
-      "https://random-palette-generator.p.rapidapi.com/palette/1/5",
-      options
-    );
-    const resultJson = await result.json();
-     console.log(resultJson); */
-  };
-
-  handleClickRapid();
   const rings = [
     {
       picture: "/src/assets/ecommerce/ring_1.png",
