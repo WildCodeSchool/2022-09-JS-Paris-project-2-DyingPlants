@@ -11,6 +11,7 @@ import plat4 from "../../assets/imgPageResto/plat4.jpg";
 import imgFooter from "../../assets/imgPageResto/imgFooter.jpg";
 import imgSection3 from "../../assets/imgPageResto/imgPrez.jpg";
 import "./Restaurant.css";
+import PaletteTop from "../../components/PaletteTop";
 /* import Palette from Palette; */
 
 export default function Restaurant() {
@@ -40,7 +41,6 @@ export default function Restaurant() {
       .catch(function (error) {
         console.error(error);
       });
-    console.log(colors);
 
     setDarkColor(colors[0]);
     setPrimaryColor(colors[1]);
@@ -78,6 +78,23 @@ export default function Restaurant() {
         </div>
       </header>
       <main className="restoMain">
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            width: "100%",
+          }}
+        >
+          {" "}
+          <PaletteTop
+            darkColor={darkColor}
+            primaryColor={primaryColor}
+            backPageColor={backPageColor}
+            backColor={backColor}
+            whatColor={whatColor}
+          />
+        </div>
+
         <section
           style={{ backgroundColor: backColor }}
           className="restoSection1"

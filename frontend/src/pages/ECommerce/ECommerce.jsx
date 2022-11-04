@@ -123,6 +123,7 @@ export default function ECommerce() {
             </div>
           </div>
         </div>
+
         <div className="sidebarProducts">
           <div className="sidebar">
             <div className="collection">
