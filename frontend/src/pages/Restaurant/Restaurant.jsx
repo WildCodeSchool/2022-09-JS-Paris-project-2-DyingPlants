@@ -8,20 +8,23 @@ import plat3 from "../../assets/imgPageResto/plat3.jpg";
 import plat4 from "../../assets/imgPageResto/plat4.jpg";
 import imgFooter from "../../assets/imgPageResto/imgFooter.jpg";
 import imgSection3 from "../../assets/imgPageResto/imgPrez.jpg";
-
 import "./Restaurant.css";
 
 export default function Restaurant() {
+  const darkColor = "rgb(44, 44, 44)";
+  const primaryColor = "rgb(148, 148, 148)";
+  const backColor = "white";
+
   return (
     <div id="page">
       <header className="restoHeader">
         <div id="topBar">
-          <p>
+          <p style={{ backgroundColor: darkColor }}>
             Logo <br />
             Name
           </p>
           <nav id="navBar">
-            <ul id="navUl">
+            <ul style={{ backgroundColor: darkColor }} id="navUl">
               <li className="linkNav">Home</li>
               <li className="linkNav">Menu</li>
               <li className="linkNav">Order</li>
@@ -30,49 +33,76 @@ export default function Restaurant() {
             </ul>
             <img src={burgerMenu} alt="burger menu" id="burgerMenu" />
           </nav>
-          <button type="button" id="buttonAdd">
+          <button
+            style={{ backgroundColor: primaryColor }}
+            type="button"
+            id="buttonAdd"
+          >
             <img src={shop} alt="logo du site" id="imgShop" />
           </button>
         </div>
       </header>
       <main className="restoMain">
-        <section className="restoSection1">
+        <section
+          style={{ backgroundColor: backColor }}
+          className="restoSection1"
+        >
           <img src={imgResto1} alt="item food" id="mainPicture" />
           <img src={imgDesk} alt="item food" id="mainPicDesk" />
-          <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h2>
+          <h2 style={{ backgroundColor: darkColor }}>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+          </h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
             blandit odio non ultricies fermentum. Cras suscipit semper blandit.
             Interdum et malesuada fames ac ante.
           </p>
-          <button type="button">Place an Order</button>
+          <button style={{ backgroundColor: primaryColor }} type="button">
+            Place an Order
+          </button>
         </section>
         <section className="restoSection2">
           <div id="topElements">
-            <h3>Lorem Ipsum Dolor</h3>
+            <h3 style={{ backgroundColor: darkColor }}>Lorem Ipsum Dolor</h3>
             <div id="buttonElement">
-              <button type="button" className="buttonSec2-1">
+              <button
+                style={{ backgroundColor: primaryColor }}
+                type="button"
+                className="buttonSec2-1"
+              >
                 Products
               </button>
-              <button type="button" className="buttonSec2">
+              <button
+                style={{ backgroundColor: backColor }}
+                type="button"
+                className="buttonSec2"
+              >
                 Sides
               </button>
-              <button type="button" className="buttonSec2">
+              <button
+                style={{ backgroundColor: backColor }}
+                type="button"
+                className="buttonSec2"
+              >
                 Drinks
               </button>
             </div>
           </div>
           <div id="allItems">
-            <div className="itemBlock">
+            <div style={{ backgroundColor: backColor }} className="itemBlock">
               <img src={plat1} alt="item" className="itemPicture" />
               <div className="itemDetails">
                 <div className="textTop">
-                  <h6>Item</h6>
+                  <h6 style={{ backgroundColor: darkColor }}>Item</h6>
                   <p>$ 00.00 USD</p>
                 </div>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                 <input type="number" className="input" />
-                <button type="button" className="buttonAdd">
+                <button
+                  style={{ backgroundColor: primaryColor }}
+                  type="button"
+                  className="buttonAdd"
+                >
                   Add To Cart
                 </button>
               </div>
@@ -82,12 +112,16 @@ export default function Restaurant() {
               <img src={plat2} alt="item" className="itemPicture" />
               <div className="itemDetails">
                 <div className="textTop">
-                  <h6>Item</h6>
+                  <h6 style={{ backgroundColor: darkColor }}>Item</h6>
                   <p>$ 00.00 USD</p>
                 </div>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                 <input type="number" className="input" />
-                <button type="button" className="buttonAdd">
+                <button
+                  style={{ backgroundColor: primaryColor }}
+                  type="button"
+                  className="buttonAdd"
+                >
                   Add To Cart
                 </button>
               </div>
@@ -97,12 +131,16 @@ export default function Restaurant() {
               <img src={plat3} alt="item" className="itemPicture" />
               <div className="itemDetails">
                 <div className="textTop">
-                  <h6>Item</h6>
+                  <h6 style={{ backgroundColor: darkColor }}>Item</h6>
                   <p>$ 00.00 USD</p>
                 </div>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                 <input type="number" className="input" />
-                <button type="button" className="buttonAdd">
+                <button
+                  style={{ backgroundColor: primaryColor }}
+                  type="button"
+                  className="buttonAdd"
+                >
                   Add To Cart
                 </button>
               </div>
@@ -112,12 +150,16 @@ export default function Restaurant() {
               <img src={plat1} alt="item" className="itemPicture" />
               <div className="itemDetails">
                 <div className="textTop">
-                  <h6>Item</h6>
+                  <h6 style={{ backgroundColor: darkColor }}>Item</h6>
                   <p>$ 00.00 USD</p>
                 </div>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                 <input type="number" className="input" />
-                <button type="button" className="buttonAdd">
+                <button
+                  style={{ backgroundColor: primaryColor }}
+                  type="button"
+                  className="buttonAdd"
+                >
                   Add To Cart
                 </button>
               </div>
@@ -127,12 +169,16 @@ export default function Restaurant() {
               <img src={plat2} alt="item" className="itemPicture" />
               <div className="itemDetails">
                 <div className="textTop">
-                  <h6>Item</h6>
+                  <h6 style={{ backgroundColor: darkColor }}>Item</h6>
                   <p>$ 00.00 USD</p>
                 </div>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                 <input type="number" className="input" />
-                <button type="button" className="buttonAdd">
+                <button
+                  style={{ backgroundColor: primaryColor }}
+                  type="button"
+                  className="buttonAdd"
+                >
                   Add To Cart
                 </button>
               </div>
@@ -142,12 +188,16 @@ export default function Restaurant() {
               <img src={plat3} alt="item" className="itemPicture" />
               <div className="itemDetails">
                 <div className="textTop">
-                  <h6>Item</h6>
+                  <h6 style={{ backgroundColor: darkColor }}>Item</h6>
                   <p>$ 00.00 USD</p>
                 </div>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                 <input type="number" className="input" />
-                <button type="button" className="buttonAdd">
+                <button
+                  style={{ backgroundColor: primaryColor }}
+                  type="button"
+                  className="buttonAdd"
+                >
                   Add To Cart
                 </button>
               </div>
@@ -157,12 +207,16 @@ export default function Restaurant() {
               <img src={plat4} alt="item" className="itemPicture" />
               <div className="itemDetails">
                 <div className="textTop">
-                  <h6>Item</h6>
+                  <h6 style={{ backgroundColor: darkColor }}>Item</h6>
                   <p>$ 00.00 USD</p>
                 </div>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                 <input type="number" className="input" />
-                <button type="button" className="buttonAdd">
+                <button
+                  style={{ backgroundColor: primaryColor }}
+                  type="button"
+                  className="buttonAdd"
+                >
                   Add To Cart
                 </button>
               </div>
@@ -172,12 +226,16 @@ export default function Restaurant() {
               <img src={plat4} alt="item" className="itemPicture" />
               <div className="itemDetails">
                 <div className="textTop">
-                  <h6>Item</h6>
+                  <h6 style={{ backgroundColor: darkColor }}>Item</h6>
                   <p>$ 00.00 USD</p>
                 </div>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                 <input type="number" className="input" />
-                <button type="button" className="buttonAdd">
+                <button
+                  style={{ backgroundColor: primaryColor }}
+                  type="button"
+                  className="buttonAdd"
+                >
                   Add To Cart
                 </button>
               </div>
@@ -187,37 +245,54 @@ export default function Restaurant() {
               <img src={plat4} alt="item" className="itemPicture" />
               <div className="itemDetails">
                 <div className="textTop">
-                  <h6>Item</h6>
+                  <h6 style={{ backgroundColor: darkColor }}>Item</h6>
                   <p>$ 00.00 USD</p>
                 </div>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                 <input type="number" className="input" />
-                <button type="button" className="buttonAdd">
+                <button
+                  style={{ backgroundColor: primaryColor }}
+                  type="button"
+                  className="buttonAdd"
+                >
                   Add To Cart
                 </button>
               </div>
             </div>
           </div>
-          <button type="button" id="buttonSeeFull">
+          <button
+            style={{ backgroundColor: primaryColor }}
+            type="button"
+            id="buttonSeeFull"
+          >
             See Full Menu
           </button>
         </section>
-        <section className="restoSection3">
+        <section
+          style={{ backgroundColor: backColor }}
+          className="restoSection3"
+        >
           <img src={imgSection3} alt="" />
           <div id="textSection3">
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+            <h3 style={{ backgroundColor: darkColor }}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </h3>
             <p>
               Lorem ipsum dolor sit amet connpmsectetur adipisicing elit.
               Repellat praesentium fugiat quod temporibus ratione modi tempore
               dolorum sequi? Harum, praesentium.
             </p>
-            <button type="button">See Our FAQ</button>
+            <button style={{ backgroundColor: primaryColor }} type="button">
+              See Our FAQ
+            </button>
           </div>
         </section>
       </main>
-      <footer id="restoFooter">
+      <footer style={{ backgroundColor: primaryColor }} id="restoFooter">
         <img src={imgFooter} alt="" id="firstFootPic" />
-        <h3>Thank you for using our app.</h3>
+        <h3 style={{ backgroundColor: darkColor }}>
+          Thank you for using our app.
+        </h3>
         <img src={imgFooter} alt="" id="secFootPic" />
       </footer>
     </div>
