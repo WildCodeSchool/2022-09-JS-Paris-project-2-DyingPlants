@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./PaletteTop.css";
 
 function PaletteTop({
   darkColor,
@@ -18,10 +19,10 @@ function PaletteTop({
         justifyContent: "space-around",
         alignItems: "center",
         flexDirection: "row",
-        width: "600px",
-        height: "180px",
+        width: "60%",
+        height: "20vh",
         borderRadius: "20px",
-        padding: "0 20px",
+        padding: "20px",
       }}
     >
       <div
@@ -29,6 +30,7 @@ function PaletteTop({
           display: "flex",
           justifyContent: "center",
           flexDirection: "column",
+          alignItems:"center"
         }}
       >
         <div className="colorBox" style={{ backgroundColor: darkColor }}>
@@ -43,6 +45,7 @@ function PaletteTop({
           display: "flex",
           justifyContent: "center",
           flexDirection: "column",
+          alignItems:"center"
         }}
       >
         <div className="colorBox" style={{ backgroundColor: primaryColor }}>
@@ -56,6 +59,7 @@ function PaletteTop({
           display: "flex",
           justifyContent: "center",
           flexDirection: "column",
+          alignItems:"center"
         }}
       >
         <div className="colorBox" style={{ backgroundColor: backPageColor }}>
@@ -71,6 +75,7 @@ function PaletteTop({
           display: "flex",
           justifyContent: "center",
           flexDirection: "column",
+          alignItems:"center"
         }}
       >
         <div className="colorBox" style={{ backgroundColor: backColor }}>
@@ -85,6 +90,7 @@ function PaletteTop({
           display: "flex",
           justifyContent: "center",
           flexDirection: "column",
+          alignItems:"center"
         }}
       >
         <div className="colorBox" style={{ backgroundColor: whatColor }}>
