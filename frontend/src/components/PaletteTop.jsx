@@ -34,6 +34,7 @@ function PaletteTop({
         <div className="colorBox" style={{ backgroundColor: darkColor }}>
           {" "}
         </div>
+
         <p style={{ textAlign: "center", marginTop: "10px" }}>Background 1</p>
         <p style={{ textAlign: "center", marginTop: "10px" }}>{darkColor}</p>
       </div>
