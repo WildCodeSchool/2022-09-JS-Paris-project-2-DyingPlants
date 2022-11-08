@@ -19,11 +19,9 @@ function PaletteTop({
         justifyContent: "space-around",
         alignItems: "center",
         flexDirection: "row",
-        width: "60%",
-        height: "20vh",
         borderRadius: "20px",
-        padding: "20px",
       }}
+      className="boxContainer"
     >
       <div
         style={{
@@ -36,8 +34,19 @@ function PaletteTop({
         <div className="colorBox" style={{ backgroundColor: darkColor }}>
           {" "}
         </div>
-        <p style={{ textAlign: "center", marginTop: "10px" }}>Background 1</p>
-        <p style={{ textAlign: "center", marginTop: "10px" }}>{darkColor}</p>
+
+        <p
+          className="textPalette"
+          style={{ textAlign: "center", marginTop: "10px" }}
+        >
+          Background 1
+        </p>
+        <p
+          className="textPalette"
+          style={{ textAlign: "center", marginTop: "10px" }}
+        >
+          {darkColor}
+        </p>
       </div>
 
       <div
@@ -51,8 +60,18 @@ function PaletteTop({
         <div className="colorBox" style={{ backgroundColor: primaryColor }}>
           {" "}
         </div>
-        <p style={{ textAlign: "center", marginTop: "10px" }}>Background 2</p>
-        <p style={{ textAlign: "center", marginTop: "10px" }}>{primaryColor}</p>
+        <p
+          className="textPalette"
+          style={{ textAlign: "center", marginTop: "10px" }}
+        >
+          Background 2
+        </p>
+        <p
+          className="textPalette"
+          style={{ textAlign: "center", marginTop: "10px" }}
+        >
+          {primaryColor}
+        </p>
       </div>
       <div
         style={{
@@ -65,8 +84,16 @@ function PaletteTop({
         <div className="colorBox" style={{ backgroundColor: backPageColor }}>
           {" "}
         </div>
-        <p style={{ textAlign: "center", marginTop: "10px" }}>Background 3</p>
-        <p style={{ textAlign: "center", marginTop: "10px" }}>
+        <p
+          className="textPalette"
+          style={{ textAlign: "center", marginTop: "10px" }}
+        >
+          Background 3
+        </p>
+        <p
+          className="textPalette"
+          style={{ textAlign: "center", marginTop: "10px" }}
+        >
           {backPageColor}
         </p>
       </div>
@@ -81,8 +108,18 @@ function PaletteTop({
         <div className="colorBox" style={{ backgroundColor: backColor }}>
           {" "}
         </div>
-        <p style={{ textAlign: "center", marginTop: "10px" }}>Typography 1</p>
-        <p style={{ textAlign: "center", marginTop: "10px" }}>{backColor}</p>
+        <p
+          className="textPalette"
+          style={{ textAlign: "center", marginTop: "10px" }}
+        >
+          Typography 1
+        </p>
+        <p
+          className="textPalette"
+          style={{ textAlign: "center", marginTop: "10px" }}
+        >
+          {backColor}
+        </p>
       </div>
 
       <div
@@ -96,8 +133,18 @@ function PaletteTop({
         <div className="colorBox" style={{ backgroundColor: whatColor }}>
           {" "}
         </div>
-        <p style={{ textAlign: "center", marginTop: "10px" }}>Typography 2</p>
-        <p style={{ textAlign: "center", marginTop: "10px" }}>{whatColor}</p>
+        <p
+          className="textPalette"
+          style={{ textAlign: "center", marginTop: "10px" }}
+        >
+          Typography 2
+        </p>
+        <p
+          className="textPalette"
+          style={{ textAlign: "center", marginTop: "10px" }}
+        >
+          {whatColor}
+        </p>
       </div>
     </div>
   );

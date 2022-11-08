@@ -38,7 +38,7 @@ export default function Restaurant() {
       .then(function y(response) {
         colors = response.data.data[0].palette;
       })
-      .catch(function (error) {
+      .catch(function col(error) {
         console.error(error);
       });
 
