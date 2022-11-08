@@ -30,7 +30,7 @@ function PaletteTop({
           display: "flex",
           justifyContent: "center",
           flexDirection: "column",
-          alignItems:"center"
+          alignItems: "center",
         }}
       >
         <div className="colorBox" style={{ backgroundColor: darkColor }}>
@@ -45,7 +45,7 @@ function PaletteTop({
           display: "flex",
           justifyContent: "center",
           flexDirection: "column",
-          alignItems:"center"
+          alignItems: "center",
         }}
       >
         <div className="colorBox" style={{ backgroundColor: primaryColor }}>
@@ -59,7 +59,7 @@ function PaletteTop({
           display: "flex",
           justifyContent: "center",
           flexDirection: "column",
-          alignItems:"center"
+          alignItems: "center",
         }}
       >
         <div className="colorBox" style={{ backgroundColor: backPageColor }}>
@@ -75,7 +75,7 @@ function PaletteTop({
           display: "flex",
           justifyContent: "center",
           flexDirection: "column",
-          alignItems:"center"
+          alignItems: "center",
         }}
       >
         <div className="colorBox" style={{ backgroundColor: backColor }}>
@@ -90,7 +90,7 @@ function PaletteTop({
           display: "flex",
           justifyContent: "center",
           flexDirection: "column",
-          alignItems:"center"
+          alignItems: "center",
         }}
       >
         <div className="colorBox" style={{ backgroundColor: whatColor }}>
