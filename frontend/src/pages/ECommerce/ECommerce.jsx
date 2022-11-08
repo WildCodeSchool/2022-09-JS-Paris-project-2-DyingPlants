@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./ECommerce.css";
-import uuid from "react-uuid";
 import axios from "axios";
-import Product from "./Product";
 import PaletteTop from "../../components/PaletteTop";
+import ProductList from "./ProductList";
+
 
 export default function ECommerce() {
   const [navbarFooter, setDarkColor] = useState("rgb(44, 44, 44)");
@@ -212,72 +212,21 @@ export default function ECommerce() {
             <div className="currentProduct">
               <div className="currentProductImg" />
             </div>
-            <div className="productList">
-              <h3
-                className="titleProduct"
-                style={{ backgroundColor: backColor, color: primaryColor }}
-              >
-                Rings
-              </h3>
-              <div className="productListItem">
-                {rings.map((i) => {
-                  return (
-                    <Product
-                      key={uuid()}
-                      color={backPageColor}
-                      typoColor={whatColor}
-                      pic={i.picture}
-                      title={i.title}
-                      price={i.price}
-                    />
-                  );
-                })}
-              </div>
-            </div>
-            <div className="productList">
-              <h3
-                className="titleProduct"
-                style={{ backgroundColor: backColor, color: primaryColor }}
-              >
-                Bracelets
-              </h3>
-              <div className="productListItem">
-                {rings.map((i) => {
-                  return (
-                    <Product
-                      key={uuid()}
-                      color={backPageColor}
-                      typoColor={whatColor}
-                      pic={i.picture}
-                      title={i.title}
-                      price={i.price}
-                    />
-                  );
-                })}
-              </div>
-            </div>
-            <div className="productList">
-              <h3
-                className="titleProduct"
-                style={{ backgroundColor: backColor, color: primaryColor }}
-              >
-                Necklace
-              </h3>
-              <div className="productListItem">
-                {rings.map((i) => {
-                  return (
-                    <Product
-                      key={uuid()}
-                      color={backPageColor}
-                      typoColor={whatColor}
-                      pic={i.picture}
-                      title={i.title}
-                      price={i.price}
-                    />
-                  );
-                })}
-              </div>
-            </div>
+            <ProductList
+              array={rings}
+              color={backPageColor}
+              typoColor={whatColor}
+            />
+            <ProductList
+              array={rings}
+              color={backPageColor}
+              typoColor={whatColor}
+            />
+            <ProductList
+              array={rings}
+              color={backPageColor}
+              typoColor={whatColor}
+            />
           </div>
         </div>
         <div className="footer">
