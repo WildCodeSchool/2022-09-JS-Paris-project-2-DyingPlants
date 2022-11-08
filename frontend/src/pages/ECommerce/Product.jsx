@@ -1,4 +1,3 @@
-import React from "react";
 import "./Product.css";
 import PropTypes from "prop-types";
 
