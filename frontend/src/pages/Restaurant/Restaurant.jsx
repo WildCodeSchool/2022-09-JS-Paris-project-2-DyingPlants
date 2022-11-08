@@ -4,10 +4,6 @@ import shop from "../../assets/imgPageResto/cadi.png";
 import burgerMenu from "../../assets/imgPageResto/burgerMenu.png";
 import imgResto1 from "../../assets/imgPageResto/imgResto1.jpg";
 import imgDesk from "../../assets/imgPageResto/imgRestoDesk.jpg";
-import plat1 from "../../assets/imgPageResto/plat1.jpg";
-import plat2 from "../../assets/imgPageResto/plat2.jpg";
-import plat3 from "../../assets/imgPageResto/plat3.jpg";
-import plat4 from "../../assets/imgPageResto/plat4.jpg";
 import imgFooter from "../../assets/imgPageResto/imgFooter.jpg";
 import imgSection3 from "../../assets/imgPageResto/imgPrez.jpg";
 import "./Restaurant.css";
@@ -49,6 +45,18 @@ export default function Restaurant() {
     setBackColor(colors[3]);
     setWhatColor(colors[4]);
   };
+
+  const itemBox = [
+    { image: "../../src/assets/imgPageResto/plat1.jpg" },
+    { image: "../../src/assets/imgPageResto/plat2.jpg" },
+    { image: "../../src/assets/imgPageResto/plat3.jpg" },
+    { image: "../../src/assets/imgPageResto/plat1.jpg" },
+    { image: "../../src/assets/imgPageResto/plat2.jpg" },
+    { image: "../../src/assets/imgPageResto/plat3.jpg" },
+    { image: "../../src/assets/imgPageResto/plat4.jpg" },
+    { image: "../../src/assets/imgPageResto/plat4.jpg" },
+    { image: "../../src/assets/imgPageResto/plat4.jpg" },
+  ];
 
   return (
     <div style={{ backgroundColor: backPageColor }} id="page">
@@ -145,69 +153,17 @@ export default function Restaurant() {
             </div>
           </div>
           <div id="allItems">
-            <ItemBox
-              backColor={backColor}
-              image={plat1}
-              darkColor={darkColor}
-              whatColor={whatColor}
-              primaryColor={primaryColor}
-            />
-            <ItemBox
-              backColor={backColor}
-              image={plat2}
-              darkColor={darkColor}
-              whatColor={whatColor}
-              primaryColor={primaryColor}
-            />
-            <ItemBox
-              backColor={backColor}
-              image={plat3}
-              darkColor={darkColor}
-              whatColor={whatColor}
-              primaryColor={primaryColor}
-            />
-            <ItemBox
-              backColor={backColor}
-              image={plat1}
-              darkColor={darkColor}
-              whatColor={whatColor}
-              primaryColor={primaryColor}
-            />
-            <ItemBox
-              backColor={backColor}
-              image={plat2}
-              darkColor={darkColor}
-              whatColor={whatColor}
-              primaryColor={primaryColor}
-            />
-            <ItemBox
-              backColor={backColor}
-              image={plat3}
-              darkColor={darkColor}
-              whatColor={whatColor}
-              primaryColor={primaryColor}
-            />
-            <ItemBox
-              backColor={backColor}
-              image={plat4}
-              darkColor={darkColor}
-              whatColor={whatColor}
-              primaryColor={primaryColor}
-            />
-            <ItemBox
-              backColor={backColor}
-              image={plat4}
-              darkColor={darkColor}
-              whatColor={whatColor}
-              primaryColor={primaryColor}
-            />
-            <ItemBox
-              backColor={backColor}
-              image={plat4}
-              darkColor={darkColor}
-              whatColor={whatColor}
-              primaryColor={primaryColor}
-            />
+            {itemBox.map((i) => {
+              return (
+                <ItemBox
+                  backColor={backColor}
+                  image={i.image}
+                  darkColor={darkColor}
+                  whatColor={whatColor}
+                  primaryColor={primaryColor}
+                />
+              );
+            })}
           </div>
           <button
             style={{ backgroundColor: primaryColor, color: darkColor }}
