@@ -1,5 +1,6 @@
-import { useState } from "react";
+import PaletteTestLeo from "@components/paletteTestLeo/PaletteTestLeo";
 import axios from "axios";
+import { useState } from "react";
 import burgerMenu from "../../assets/imgPageResto/burgerMenu.png";
 import shop from "../../assets/imgPageResto/cadi.png";
 import imgFooter from "../../assets/imgPageResto/imgFooter.jpg";
@@ -51,7 +52,10 @@ export default function Restaurant() {
   };
 
   return (
-    <div style={{ backgroundColor: backPageColor }} id="page">
+    <div
+      style={{ backgroundColor: backPageColor, position: "relative" }}
+      id="page"
+    >
       <header className="restoHeader">
         <div id="topBar" style={{ backgroundColor: backColor }}>
           <p style={{ color: darkColor, borderColor: darkColor }}>
@@ -346,6 +350,15 @@ export default function Restaurant() {
         <h3 style={{ color: darkColor }}>Thank you for using our app.</h3>
         <img src={imgFooter} alt="" id="secFootPic" />
       </footer>
+      <PaletteTestLeo
+        labelAndColorArray={[
+          ["darkColor", darkColor, setDarkColor],
+          ["primaryColor", primaryColor, setPrimaryColor],
+          ["backPageColor", backPageColor, setBackPageColor],
+          ["backColor", backColor, setBackColor],
+          ["whatColor", whatColor, setWhatColor],
+        ]}
+      />
     </div>
   );
 }
