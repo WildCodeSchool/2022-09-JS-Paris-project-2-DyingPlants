@@ -1,11 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ECommerce.css";
 import uuid from "react-uuid";
+import axios from "axios";
 import Product from "./Product";
 import PaletteTop from "../../components/PaletteTop";
-import axios from "axios";
-import { useState } from "react";
-
 
 export default function ECommerce() {
   const [navbarFooter, setDarkColor] = useState("rgb(44, 44, 44)");
@@ -147,27 +145,47 @@ export default function ECommerce() {
   return (
     <div className="ecommerce">
       <div className="header">
-        <ul style={{backgroundColor: navbarFooter}} className="navBarEcommerce">
-          <li style={{color: whatColor}}>Home</li>
-          <li style={{color: whatColor}}>Shop</li>
-          <li style={{color: whatColor}}>Blog</li>
-          <button type="button" onClick={fetchColorsEcommerce}>Change colors</button>
+        <ul
+          style={{ backgroundColor: navbarFooter }}
+          className="navBarEcommerce"
+        >
+          <li style={{ color: whatColor }}>Home</li>
+          <li style={{ color: whatColor }}>Shop</li>
+          <li style={{ color: whatColor }}>Blog</li>
+          <button type="button" onClick={fetchColorsEcommerce}>
+            Change colors
+          </button>
         </ul>
       </div>
       <div className="content">
         <div className="banner">
           <div className="bannerContainer">
             <div className="bannerImg">
-              <h1  style={{ color: navbarFooter, border: `0.3rem solid ${navbarFooter}` }} >Name of your site</h1>
+              <h1
+                style={{
+                  color: navbarFooter,
+                  border: `0.3rem solid ${navbarFooter}`,
+                }}
+              >
+                Name of your site
+              </h1>
             </div>
           </div>
         </div>
 
         <div className="sidebarProducts">
           <div className="sidebar">
-            <div className="collection"  style={{ border: `2px solid ${navbarFooter}` }} >
+            <div
+              className="collection"
+              style={{ border: `2px solid ${navbarFooter}` }}
+            >
               <div className="collectionContainer">
-                <h2 className="title_collection" style={{ backgroundColor: navbarFooter}}>COLLECTIONS</h2>
+                <h2
+                  className="title_collection"
+                  style={{ backgroundColor: navbarFooter }}
+                >
+                  COLLECTIONS
+                </h2>
                 <p>Collection printemps</p>
                 <p>Collection été</p>
                 <p>Collection automne</p>
@@ -175,7 +193,10 @@ export default function ECommerce() {
               </div>
             </div>
             <img src="/src/assets/ecommerce/img-sidebar.png" alt="sidebar" />
-            <div  style={{ border: `2px solid ${navbarFooter}` }} className="storeInfo">
+            <div
+              style={{ border: `2px solid ${navbarFooter}` }}
+              className="storeInfo"
+            >
               <div className="storeInfoContainer">
                 <h2 className="title_store_info">INFOS BOUTIQUE</h2>
                 <p>
@@ -192,7 +213,12 @@ export default function ECommerce() {
               <div className="currentProductImg" />
             </div>
             <div className="productList">
-              <h3 className="titleProduct"  style={{ backgroundColor: backColor, color:primaryColor}}>Rings</h3>
+              <h3
+                className="titleProduct"
+                style={{ backgroundColor: backColor, color: primaryColor }}
+              >
+                Rings
+              </h3>
               <div className="productListItem">
                 {rings.map((i) => {
                   return (
@@ -209,7 +235,12 @@ export default function ECommerce() {
               </div>
             </div>
             <div className="productList">
-              <h3 className="titleProduct"  style={{ backgroundColor: backColor, color:primaryColor}}>Bracelets</h3>
+              <h3
+                className="titleProduct"
+                style={{ backgroundColor: backColor, color: primaryColor }}
+              >
+                Bracelets
+              </h3>
               <div className="productListItem">
                 {rings.map((i) => {
                   return (
@@ -226,7 +257,12 @@ export default function ECommerce() {
               </div>
             </div>
             <div className="productList">
-              <h3 className="titleProduct" style={{ backgroundColor: backColor, color:primaryColor}}>Necklace</h3>
+              <h3
+                className="titleProduct"
+                style={{ backgroundColor: backColor, color: primaryColor }}
+              >
+                Necklace
+              </h3>
               <div className="productListItem">
                 {rings.map((i) => {
                   return (
@@ -245,7 +281,10 @@ export default function ECommerce() {
           </div>
         </div>
         <div className="footer">
-          <ul style={{backgroundColor: navbarFooter}} className="navBarEcommerce">
+          <ul
+            style={{ backgroundColor: navbarFooter }}
+            className="navBarEcommerce"
+          >
             <li>Contact Us</li>
             <li>About Us</li>
             <li>Autre</li>
@@ -253,22 +292,21 @@ export default function ECommerce() {
         </div>
       </div>
       <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            width: "100%",
-          }}
-        >
-          {" "}
-          <PaletteTop
-            darkColor={navbarFooter}
-            primaryColor={primaryColor}
-            backPageColor={backPageColor}
-            backColor={backColor}
-            whatColor={whatColor}
-          />
-        </div>
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          width: "100%",
+        }}
+      >
+        {" "}
+        <PaletteTop
+          darkColor={navbarFooter}
+          primaryColor={primaryColor}
+          backPageColor={backPageColor}
+          backColor={backColor}
+          whatColor={whatColor}
+        />
+      </div>
     </div>
-    
   );
 }
