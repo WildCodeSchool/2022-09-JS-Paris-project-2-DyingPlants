@@ -1,10 +1,12 @@
 import React from "react";
 import "./Startup.css";
 
-export default function NavContainer() {
+export default function NavContainer({ colors }) {
+  const { background1, background2, background3, font1, font2 } = colors;
+
   return (
     <header>
-      <div className="nav-container">
+      <div className="nav-container" style={{ backgroundColor: background1 }}>
         <div style={{ width: "70%", margin: "auto" }}>
           <nav id="barNav">
             <span id="logo">Luko</span>

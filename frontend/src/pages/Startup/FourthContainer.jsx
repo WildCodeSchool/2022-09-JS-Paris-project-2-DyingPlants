@@ -1,7 +1,7 @@
-import React from "react";
 import "./Startup.css";
 
-export default function FourthContainer() {
+export default function FourthContainer({ colors }) {
+  const { background1, background2, background3, font1, font2 } = colors;
   return (
     <div className="fourthContainer">
       <div className="underFourth" style={{ width: "50%", marginLeft: "auto" }}>

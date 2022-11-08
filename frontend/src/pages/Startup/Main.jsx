@@ -11,19 +11,21 @@ import MyButtons from "./MyButtons";
 import SeventhContainer from "./SeventhContainer";
 import SeventhContainer2 from "./SeventhContainer2";
 
-export default function Main() {
+export default function Main({ colors }) {
+  const { background1, background2, background3, font1, font2 } = colors;
+
   return (
     <div>
-      <SecondContainer />
-      <ThirdContainer />
-      <ThirdContainer2 />
-      <FourthContainer />
-      <FourthContainer2 />
-      <FifthContainer />
-      <SixthContainer />
-      <MyButtons />
-      <SeventhContainer />
-      <SeventhContainer2 />
+      <SecondContainer colors={colors} />
+      <ThirdContainer colors={colors} />
+      <ThirdContainer2 colors={colors} />
+      <FourthContainer colors={colors} />
+      <FourthContainer2 colors={colors} />
+      <FifthContainer colors={colors} />
+      <SixthContainer colors={colors} />
+      <MyButtons colors={colors} />
+      <SeventhContainer colors={colors} />
+      <SeventhContainer2 colors={colors} />
     </div>
   );
 }

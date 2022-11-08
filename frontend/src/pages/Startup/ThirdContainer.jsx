@@ -1,9 +1,10 @@
 import React from "react";
 import "./Startup.css";
 
-export default function ThirdContainer() {
+export default function ThirdContainer({ colors }) {
+  const { background1, background2, background3, font1, font2 } = colors;
   return (
-    <div className="thirdContainer">
+    <div style={{ backgroundColor: background3 }} className="thirdContainer">
       <div className="underThird">
         <h3>Nos engagements</h3>
         <p>
