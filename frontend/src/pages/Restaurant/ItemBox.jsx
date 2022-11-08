@@ -26,7 +26,6 @@ function ItemBox({ backColor, image, darkColor, whatColor, primaryColor }) {
     </div>
   );
 }
-
 ItemBox.propTypes = {
   backColor: PropTypes.string,
   image: PropTypes.string,
