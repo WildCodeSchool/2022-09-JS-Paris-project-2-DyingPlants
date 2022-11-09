@@ -1,7 +1,7 @@
 /*ALL*/
 
 #page {
-  background-color: rgb(230, 230, 230);
+  /* background-color: rgb(230, 230, 230);*/
   font-family: "Fjalla One", sans-serif;
   min-width: 364px;
 }
@@ -14,7 +14,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: rgb(255, 255, 255);
+  /*background-color: rgb(255, 255, 255);*/
 }
 
 #topBar p {
@@ -51,7 +51,7 @@
 #buttonAdd {
   height: 60%;
   width: 55px;
-  background-color: rgb(148, 148, 148);
+  /*background-color: rgb(148, 148, 148);*/
   border: none;
   border-radius: 10px;
 }
@@ -69,7 +69,7 @@
   flex-direction: column;
   max-width: 1400px;
   margin: 0 auto;
-  background-color: white;
+  /*background-color: white;*/
   padding-bottom: 40px;
   border-bottom-left-radius: 20px;
 }
@@ -101,7 +101,7 @@
   padding: 5px 0;
   margin: 40px 0 0 40px;
   font-size: 20px;
-  background-color: rgb(148, 148, 148);
+  /*background-color: rgb(148, 148, 148);*/
   border: none;
   border-radius: 10px;
 }
@@ -161,7 +161,7 @@
   padding: 5px 0;
   margin: 30px 0 20px 20px;
   font-size: 20px;
-  background-color: rgb(148, 148, 148);
+  /*background-color: rgb(148, 148, 148);*/
   border: none;
   border-radius: 10px;
 }
@@ -172,7 +172,7 @@
   padding: 5px 0;
   margin: 30px 0 20px 20px;
   font-size: 20px;
-  background-color: rgb(255, 255, 255);
+  /*background-color: rgb(255, 255, 255);*/
   border: none;
   border-radius: 10px;
 }
@@ -182,7 +182,7 @@
 .itemBlock {
   display: flex;
   align-items: center;
-  background-color: white;
+  /*background-color: white;*/
   margin: 0 auto;
   margin-top: 30px;
   width: 360px;
@@ -192,7 +192,6 @@
 
 .itemPicture {
   height: 100px;
-  background-color: white;
   border-radius: 10px;
   margin: 0 20px 0 30px;
 }
@@ -204,7 +203,7 @@
 }
 
 .itemDetails {
-  margin-right: 50px;
+  margin-right: 30px;
 }
 
 .textTop h6 {
@@ -226,7 +225,7 @@
 .buttonAdd {
   height: 30px;
   width: 100px;
-  background-color: rgb(148, 148, 148);
+  /*background-color: rgb(148, 148, 148);*/
   border: none;
   border-radius: 8px;
   font-size: 16px;
@@ -249,7 +248,7 @@
   border-radius: 5px;
   margin-bottom: 70px;
   margin-top: 40px;
-  background-color: rgb(148, 148, 148);
+  /*background-color: rgb(148, 148, 148);*/
   border: none;
   border-radius: 10px;
 }
@@ -262,7 +261,7 @@
   flex-direction: column;
   max-width: 1000px;
   margin: 0 auto;
-  background-color: white;
+  /*background-color: white;*/
   padding: 40px 0;
   margin-bottom: 40px;
   border-radius: 20px;
@@ -271,7 +270,6 @@
 .restoSection3 img {
   width: 50%;
   height: auto;
-  background-color: white;
   margin: 0 auto;
   border-radius: 10px;
 }
@@ -292,7 +290,7 @@
   margin: 40px 0 0 40px;
   font-size: 20px;
   border-radius: 5px;
-  background-color: rgb(148, 148, 148);
+  /*background-color: rgb(148, 148, 148);*/
   border: none;
   border-radius: 10px;
 }
@@ -314,14 +312,14 @@
 #restoFooter {
   display: flex;
   align-items: center;
-  background-color: rgb(148, 148, 148);
+  /*background-color: rgb(148, 148, 148);*/
   border-top-right-radius: 80px 60px;
   margin: auto;
 }
 
 #restoFooter img {
   height: 190px;
-  background-color: rgb(85, 85, 85);
+  background-color: rgb(44, 44, 44);
 }
 
 #secFootPic {
