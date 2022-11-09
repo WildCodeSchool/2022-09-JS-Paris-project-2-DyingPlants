@@ -17,19 +17,6 @@ export default function Main({ colors }) {
 
   return (
     <div>
-<<<<<<< HEAD
-      <SecondContainer />
-      <SecondContainer2 />
-      <ThirdContainer />
-      <ThirdContainer2 />
-      <FourthContainer />
-      <FourthContainer2 />
-      <FifthContainer />
-      <SixthContainer />
-      <MyButtons />
-      <SeventhContainer />
-      <SeventhContainer2 />
-=======
       <SecondContainer colors={colors} />
       <ThirdContainer colors={colors} />
       <ThirdContainer2 colors={colors} />
@@ -40,7 +27,6 @@ export default function Main({ colors }) {
       <MyButtons colors={colors} />
       <SeventhContainer colors={colors} />
       <SeventhContainer2 colors={colors} />
->>>>>>> 2987ec79c1867a2c2872aa62a9caa36adbbbe6ba
     </div>
   );
 }
