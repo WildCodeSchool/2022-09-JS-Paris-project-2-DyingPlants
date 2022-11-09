@@ -146,18 +146,17 @@ export default function ECommerce() {
 
   return (
     <div className="ecommerce">
-      <EcommerceHeader
-        colorUl={navbarFooter}
-        colorIl={whatColor}
-        fetchColors={fetchColorsEcommerce}
-      />
-      <Content
-        colorNavbarFooter={navbarFooter}
-        array={rings}
-        color={backPageColor}
-        typoColor={whatColor}
-      />
-      <Footer colorUl={navbarFooter} />
+      <div>
+        <EcommerceHeader colorUl={navbarFooter} colorIl={whatColor} />
+        <Content
+          colorNavbarFooter={navbarFooter}
+          array={rings}
+          color={backPageColor}
+          typoColor={whatColor}
+          labelColor={backColor}
+        />
+        <Footer colorUl={navbarFooter} />
+      </div>
       <div
         style={{
           display: "flex",
@@ -168,11 +167,11 @@ export default function ECommerce() {
         {" "}
         <PaletteTestLeo
           labelAndColorArray={[
-            ["darkColor", navbarFooter, setDarkColor],
-            ["primaryColor", primaryColor, setPrimaryColor],
-            ["backPageColor", backPageColor, setBackPageColor],
-            ["backColor", backColor, setBackColor],
-            ["whatColor", whatColor, setWhatColor],
+            ["Navbar and Footer", navbarFooter, setDarkColor],
+            ["Primary Color", primaryColor, setPrimaryColor],
+            ["Product", backPageColor, setBackPageColor],
+            ["Label", backColor, setBackColor],
+            ["Typography", whatColor, setWhatColor],
           ]}
         />
       </div>

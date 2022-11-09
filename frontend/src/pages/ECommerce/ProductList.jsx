@@ -3,12 +3,12 @@ import uuid from "react-uuid";
 import PropTypes from "prop-types";
 import Product from "./Product";
 
-export default function ProductList({ array, color, typoColor }) {
+export default function ProductList({ array, color, labelColor, typoColor }) {
   return (
     <div className="productList">
       <h3
         className="titleProduct"
-        style={{ backgroundColor: color, color: typoColor }}
+        style={{ backgroundColor: labelColor, color: typoColor }}
       >
         {" "}
         {Object.keys({ array })[0]}

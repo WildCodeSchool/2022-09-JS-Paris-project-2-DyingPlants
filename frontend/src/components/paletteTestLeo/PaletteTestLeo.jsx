@@ -129,10 +129,12 @@ export default function PaletteTestLeo({ labelAndColorArray }) {
       style={{
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-evenly",
+        justifyContent: "space-between",
+        alignItems: "center",
         position: "fixed",
-        height: "250px",
-        width: "100%",
+        height: "auto",
+        width: "80%",
+        borderRadius:"10px",
         left: 0,
         right: 0,
         margin: "0 auto",
@@ -143,7 +145,7 @@ export default function PaletteTestLeo({ labelAndColorArray }) {
       <div
         className="paletteTop"
         style={{
-          width: "80%",
+          width: "90%",
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-evenly",
@@ -152,41 +154,55 @@ export default function PaletteTestLeo({ labelAndColorArray }) {
         {currentColors.map((elt, i) => (
           <div
             style={{
+              width: "100%",
               display: "flex",
-              justifyContent: "center",
               flexDirection: "column",
               alignItems: "center",
+              justifyContent: "space-evenly",
+              marginTop: "auto",
             }}
           >
+            <p
+              className="textPalette"
+              style={{
+                textAlign: "center",
+                marginTop: "10px",
+                wordWrap: "break-word",
+                fontSize: "0.8em",
+              }}
+            >
+              {labels[i]}
+            </p>
+            <p
+              className="textPalette"
+              style={{
+                textAlign: "center",
+                marginTop: "5px",
+                wordWrap: "break-word",
+              }}
+            >
+              {elt}
+            </p>
             <div
               className="colorBox"
               style={{
                 backgroundColor: elt,
               }}
+            />
+            <button
+              style={{ fontSize: "small", width: "auto" }}
+              type="button"
+              onClick={() => handleChangeColor(i)}
             >
-              <button type="button" onClick={() => handleChangeColor(i)}>
-                change
-              </button>
-              <p
-                className="textPalette"
-                style={{ textAlign: "center", marginTop: "10px" }}
-              >
-                {labels[i]}
-              </p>
-              <p
-                className="textPalette"
-                style={{ textAlign: "center", marginTop: "10px" }}
-              >
-                {elt}
-              </p>
-            </div>
+              change
+            </button>
           </div>
         ))}
       </div>
       <div
         className="paletteBas"
         style={{
-          width: "80%",
+          width: "90%",
           minHeight: "40%",
           maxHeight: "40%",
           display: "flex",
@@ -195,12 +211,13 @@ export default function PaletteTestLeo({ labelAndColorArray }) {
         }}
       >
         <div
-          className="colorsContainer"
           style={{
-            width: "80%",
+            width: "100%",
             display: "flex",
-            justifyContent: "space-between",
-            margin: "0 auto",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+            marginTop: "auto",
           }}
         >
           {fetchedColors.map((elt, i) => {
@@ -211,9 +228,6 @@ export default function PaletteTestLeo({ labelAndColorArray }) {
                 onMouseLeave={() => setHoveredDiv(null)}
                 style={{
                   backgroundColor: elt,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
                 }}
               >
                 <button
@@ -241,69 +255,76 @@ export default function PaletteTestLeo({ labelAndColorArray }) {
             );
           })}
         </div>
-        <form
-          className="inputContainer"
+      </div>
+      <form
+        className="inputContainer"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          width: "100%",
+          margin: "0 auto",
+          gap: "15px",
+          alignItems: "center",
+          marginTop: "20px",
+        }}
+      >
+        <div
+          className="fetchTypeContainer"
           style={{
+            gap: "10px",
+            width: "90%",
             display: "flex",
-            width: "70%",
-            margin: "0 auto",
-            gap: "15px",
-            alignItems: "center",
-            marginTop: "20px",
+            flexDirection: "row",
+            justifyContent: "space-between",
           }}
         >
-          <div
-            className="fetchTypeContainer"
-            style={{ gap: "10px", width: "80%" }}
-          >
-            <input
-              type="radio"
-              id="complementary"
-              name="fetchType"
-              value="complementary"
-              checked={fetchType === "complementary"}
-              style={{ marginRight: "10px" }}
-              onChange={(e) => {
-                setFetchType(e.target.value);
-              }}
-            />
-            <label htmlFor="complementary" style={{ marginRight: "15px" }}>
-              complementary
-            </label>
+          <input
+            type="radio"
+            id="complementary"
+            name="fetchType"
+            value="complementary"
+            checked={fetchType === "complementary"}
+            onChange={(e) => {
+              setFetchType(e.target.value);
+            }}
+          />
+          <label className="labelFont" htmlFor="complementary">
+            complementary
+          </label>
 
-            <input
-              type="radio"
-              id="topPalette"
-              name="fetchType"
-              value="topPalette"
-              checked={fetchType === "topPalette"}
-              style={{ marginRight: "10px" }}
-              onChange={(e) => {
-                setFetchType(e.target.value);
-              }}
-            />
-            <label htmlFor="topPalette" style={{ marginRight: "15px" }}>
-              Top palette
-            </label>
+          <input
+            type="radio"
+            id="topPalette"
+            name="fetchType"
+            value="topPalette"
+            checked={fetchType === "topPalette"}
+            onChange={(e) => {
+              setFetchType(e.target.value);
+            }}
+          />
+          <label className="labelFont" htmlFor="topPalette">
+            Top palette
+          </label>
 
-            <input
-              type="radio"
-              id="monochromatic"
-              style={{ marginRight: "15px" }}
-              name="fetchType"
-              value="monochromatic"
-              checked={fetchType === "monochromatic"}
-              onChange={(e) => {
-                setFetchType(e.target.value);
-              }}
-            />
-            <label htmlFor="monochromatic">monochromatic</label>
-          </div>
-          <button type="button" onClick={handleFetch}>
-            Generate Colors
-          </button>
-        </form>
-      </div>
+          <input
+            type="radio"
+            id="monochromatic"
+            name="fetchType"
+            value="monochromatic"
+            checked={fetchType === "monochromatic"}
+            onChange={(e) => {
+              setFetchType(e.target.value);
+            }}
+          />
+          <label className="labelFont" htmlFor="monochromatic">
+            monochromatic
+          </label>
+        </div>
+        <button type="button" onClick={handleFetch}>
+          Generate Colors
+        </button>
+      </form>
     </div>
   );
 }

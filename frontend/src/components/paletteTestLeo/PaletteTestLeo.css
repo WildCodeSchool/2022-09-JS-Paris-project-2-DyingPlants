@@ -1,8 +1,13 @@
-.colorContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .buttonLockedColor {
   border-radius: 10px;
+}
+
+.labelFont {
+  font-size: small;
+}
+
+@media screen and (min-width: 414px) {
+  .labelFont {
+    font-size: 1em;
+  }
 }

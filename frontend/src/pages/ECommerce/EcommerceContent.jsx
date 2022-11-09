@@ -6,6 +6,7 @@ export default function EcommerceContent({
   array,
   color,
   typoColor,
+  labelColor,
 }) {
   return (
     <div className="content">
@@ -63,9 +64,24 @@ export default function EcommerceContent({
           <div className="currentProduct">
             <div className="currentProductImg" />
           </div>
-          <ProductList array={array} color={color} typoColor={typoColor} />
-          <ProductList array={array} color={color} typoColor={typoColor} />
-          <ProductList array={array} color={color} typoColor={typoColor} />
+          <ProductList
+            array={array}
+            color={color}
+            labelColor={labelColor}
+            typoColor={typoColor}
+          />
+          <ProductList
+            array={array}
+            color={color}
+            labelColor={labelColor}
+            typoColor={typoColor}
+          />
+          <ProductList
+            array={array}
+            color={color}
+            labelColor={labelColor}
+            typoColor={typoColor}
+          />
         </div>
       </div>
     </div>
