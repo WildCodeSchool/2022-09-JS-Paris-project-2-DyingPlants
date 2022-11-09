@@ -1,14 +1,16 @@
-import { useState } from "react";
+import PaletteTestLeo from "@components/paletteTestLeo/PaletteTestLeo";
 import axios from "axios";
-import shop from "../../assets/imgPageResto/cadi.png";
+import { useState } from "react";
 import burgerMenu from "../../assets/imgPageResto/burgerMenu.png";
-import imgResto1 from "../../assets/imgPageResto/imgResto1.jpg";
-import imgDesk from "../../assets/imgPageResto/imgRestoDesk.jpg";
+import shop from "../../assets/imgPageResto/cadi.png";
 import imgFooter from "../../assets/imgPageResto/imgFooter.jpg";
 import imgSection3 from "../../assets/imgPageResto/imgPrez.jpg";
-import "./Restaurant.css";
+import imgResto1 from "../../assets/imgPageResto/imgResto1.jpg";
+import imgDesk from "../../assets/imgPageResto/imgRestoDesk.jpg";
+
 import PaletteTop from "../../components/PaletteTop";
 import ItemBox from "./ItemBox";
+import "./Restaurant.css";
 /* import Palette from Palette; */
 
 export default function Restaurant() {
@@ -30,7 +32,7 @@ export default function Restaurant() {
   let colors;
 
   const fetchColors = async () => {
-    await axios
+    const test = await axios
       .request(options)
       .then(function y(response) {
         colors = response.data.data[0].palette;
@@ -59,7 +61,10 @@ export default function Restaurant() {
   ];
 
   return (
-    <div style={{ backgroundColor: backPageColor }} id="page">
+    <div
+      style={{ backgroundColor: backPageColor, position: "relative" }}
+      id="page"
+    >
       <header className="restoHeader">
         <div id="topBar" style={{ backgroundColor: backColor }}>
           <p style={{ color: darkColor, borderColor: darkColor }}>
@@ -76,6 +81,7 @@ export default function Restaurant() {
             </ul>
             <img src={burgerMenu} alt="burger menu" id="burgerMenu" />
           </nav>
+
           <button
             onClick={fetchColors}
             style={{ backgroundColor: primaryColor }}
@@ -95,13 +101,13 @@ export default function Restaurant() {
           }}
         >
           {" "}
-          <PaletteTop
+          {/* <PaletteTop
             darkColor={darkColor}
             primaryColor={primaryColor}
             backPageColor={backPageColor}
             backColor={backColor}
             whatColor={whatColor}
-          />
+          /> */}
         </div>
 
         <section
@@ -201,6 +207,15 @@ export default function Restaurant() {
         <h3 style={{ color: darkColor }}>Thank you for using our app.</h3>
         <img src={imgFooter} alt="" id="secFootPic" />
       </footer>
+      <PaletteTestLeo
+        labelAndColorArray={[
+          ["darkColor", darkColor, setDarkColor],
+          ["primaryColor", primaryColor, setPrimaryColor],
+          ["backPageColor", backPageColor, setBackPageColor],
+          ["backColor", backColor, setBackColor],
+          ["whatColor", whatColor, setWhatColor],
+        ]}
+      />
     </div>
   );
 }
