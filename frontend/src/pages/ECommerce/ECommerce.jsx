@@ -4,7 +4,6 @@ import axios from "axios";
 import PaletteTop from "../../components/PaletteTop";
 import ProductList from "./ProductList";
 
-
 export default function ECommerce() {
   const [navbarFooter, setDarkColor] = useState("rgb(44, 44, 44)");
   const [primaryColor, setPrimaryColor] = useState("rgb(148, 148, 148)");
