@@ -14,6 +14,27 @@ export default function PaletteTestLeo({ labelAndColorArray }) {
   const [fetchedColors, setFetchedColors] = useState([]);
   const [lockedColors, setLockedColors] = useState([]);
   const [hoveredDiv, setHoveredDiv] = useState(null);
+  const [colorPerDivItem, setColorsPerDivItem] = useState([
+    null,
+    null,
+    null,
+    null,
+    null,
+  ]);
+
+  const handleChangeColor = (i) => {
+    const nextColor =
+      colorPerDivItem[i] === null || colorPerDivItem[i] === 4
+        ? fetchedColors[0]
+        : fetchedColors[colorPerDivItem[i] + 1];
+    setters[i](nextColor);
+
+    setColorsPerDivItem((prev) => {
+      const newArr = [...prev];
+      newArr[i] = newArr[i] === null || newArr[i] === 4 ? 0 : newArr[i] + 1;
+      return newArr;
+    });
+  };
 
   async function colorMindBrandNewFetch() {
     const response = await axios({
@@ -128,16 +149,7 @@ export default function PaletteTestLeo({ labelAndColorArray }) {
           justifyContent: "space-evenly",
         }}
       >
-        {/* <div
-          className="colorsContainer"
-          style={{
-            width: "80%",
-            display: "flex",
-            justifyContent: "space-between",
-            margin: "0 auto",
-          }}
-        > */}
-        {currentColors.map((elt) => (
+        {currentColors.map((elt, i) => (
           <div
             style={{
               display: "flex",
@@ -151,19 +163,23 @@ export default function PaletteTestLeo({ labelAndColorArray }) {
               style={{
                 backgroundColor: elt,
               }}
-            />
-            <p
-              className="textPalette"
-              style={{ textAlign: "center", marginTop: "10px" }}
             >
-              {elt[0]}
-            </p>
-            <p
-              className="textPalette"
-              style={{ textAlign: "center", marginTop: "10px" }}
-            >
-              {elt[1]}
-            </p>
+              <button type="button" onClick={() => handleChangeColor(i)}>
+                change
+              </button>
+              <p
+                className="textPalette"
+                style={{ textAlign: "center", marginTop: "10px" }}
+              >
+                {labels[i]}
+              </p>
+              <p
+                className="textPalette"
+                style={{ textAlign: "center", marginTop: "10px" }}
+              >
+                {elt}
+              </p>
+            </div>
           </div>
         ))}
       </div>
