@@ -101,13 +101,13 @@ export default function Restaurant() {
           }}
         >
           {" "}
-          <PaletteTop
+          {/* <PaletteTop
             darkColor={darkColor}
             primaryColor={primaryColor}
             backPageColor={backPageColor}
             backColor={backColor}
             whatColor={whatColor}
-          />
+          /> */}
         </div>
 
         <section

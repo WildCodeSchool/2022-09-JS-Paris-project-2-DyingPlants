@@ -1,16 +1,19 @@
 import axios from "axios";
 import { useState } from "react";
+import { AiFillLock } from "react-icons/ai";
+import "./PaletteTestLeo.css";
 
 export default function PaletteTestLeo({ labelAndColorArray }) {
   // palette top//
-  /* const labels = labelAndColorArray.map((elt) => elt[0]); */
+  const labels = labelAndColorArray.map((elt) => elt[0]);
   const currentColors = labelAndColorArray.map((elet) => elet[1]);
-  /* const setters = labelAndColorArray.map((elt) => elt[2]); */
+  const setters = labelAndColorArray.map((elt) => elt[2]);
 
   // palette bottom//
   const [fetchType, setFetchType] = useState("complementary");
   const [fetchedColors, setFetchedColors] = useState([]);
   const [lockedColors, setLockedColors] = useState([]);
+  const [hoveredDiv, setHoveredDiv] = useState(null);
 
   async function colorMindBrandNewFetch() {
     const response = await axios({
@@ -120,14 +123,12 @@ export default function PaletteTestLeo({ labelAndColorArray }) {
         className="paletteTop"
         style={{
           width: "80%",
-          minHeight: "40%",
-          maxHeight: "40%",
           display: "flex",
-          flexDirection: "column",
+          flexDirection: "row",
           justifyContent: "space-evenly",
         }}
       >
-        <div
+        {/* <div
           className="colorsContainer"
           style={{
             width: "80%",
@@ -135,18 +136,36 @@ export default function PaletteTestLeo({ labelAndColorArray }) {
             justifyContent: "space-between",
             margin: "0 auto",
           }}
-        >
-          {currentColors.map((elt) => (
+        > */}
+        {currentColors.map((elt) => (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
             <div
+              className="colorBox"
               style={{
-                width: "5vw",
-                height: "5vw",
                 backgroundColor: elt,
               }}
-              className="colorContainer"
             />
-          ))}
-        </div>
+            <p
+              className="textPalette"
+              style={{ textAlign: "center", marginTop: "10px" }}
+            >
+              {elt[0]}
+            </p>
+            <p
+              className="textPalette"
+              style={{ textAlign: "center", marginTop: "10px" }}
+            >
+              {elt[1]}
+            </p>
+          </div>
+        ))}
       </div>
       <div
         className="paletteBas"
@@ -170,25 +189,39 @@ export default function PaletteTestLeo({ labelAndColorArray }) {
         >
           {fetchedColors.map((elt, i) => {
             return (
-              <button
+              <div
+                className="colorBox"
+                onMouseEnter={() => setHoveredDiv(i)}
+                onMouseLeave={() => setHoveredDiv(null)}
                 style={{
-                  width: "5vw",
-                  height: "5vw",
                   backgroundColor: elt,
-                  border: lockedColors.includes(i) ? "1px solid red" : "none",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
-                onClick={() => {
-                  setLockedColors((prev) => {
-                    if (prev.includes(i)) {
-                      return prev.filter((elem) => elem !== i);
-                    }
-                    return [...prev, i];
-                  });
-                }}
-                className="colorContainer"
-                type="button"
-                aria-label="Save"
-              />
+              >
+                <button
+                  className="buttonLockedColor"
+                  style={{
+                    display:
+                      hoveredDiv === i || lockedColors.includes(i)
+                        ? "initial"
+                        : "none",
+                  }}
+                  onClick={() => {
+                    setLockedColors((prev) => {
+                      if (prev.includes(i)) {
+                        return prev.filter((elem) => elem !== i);
+                      }
+                      return [...prev, i];
+                    });
+                  }}
+                  type="button"
+                  aria-label="Save"
+                >
+                  <AiFillLock />
+                </button>
+              </div>
             );
           })}
         </div>
