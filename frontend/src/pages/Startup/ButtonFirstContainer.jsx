@@ -1,7 +1,7 @@
 import React from "react";
 import "./Startup.css";
 
-export default function buttonFirstContainer({ text }) {
+export default function ButtonFirstContainer({ text }) {
   return (
     <button
       type="button"

@@ -1,6 +1,5 @@
 import React from "react";
 import "./Startup.css";
-import ButtonSecondContainer from "./ButtonSecondContainer";
 
 export default function SecondContainer() {
   return (
@@ -9,7 +8,6 @@ export default function SecondContainer() {
         <div>
           <h3>Vous êtes entre de bonnes mains.</h3>
         </div>
-
         <div className="borderLeft" style={{ borderLeft: "2px solid" }}>
           <h3> 2 minutes, top chrono</h3>
           <p>
@@ -17,7 +15,6 @@ export default function SecondContainer() {
             pour vous en quelques clics
           </p>
         </div>
-
         <div className="borderLeft" style={{ borderLeft: "2px solid" }}>
           <h3>7 jours sur 7</h3>
           <p>
@@ -25,16 +22,12 @@ export default function SecondContainer() {
             (même dimanche) en moins de 100 secondes
           </p>
         </div>
-
         <div className="borderLeft" style={{ borderLeft: "2px solid" }}>
           <h3>2x plus rapide</h3>
           <p>
             Un pépin chez vous ? Vous êtes remboursé avant même d'avoir dit
             "ouf"
           </p>
-        </div>
-        <div className="devis">
-          <ButtonSecondContainer text="Mon devis en 2 minutes" />
         </div>
       </div>
     </div>

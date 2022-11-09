@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: var(--text-font);
-  background-color: var(--dark-color);
+  background-color: var(#0053f1);
   line-height: 1.5;
   font-size: 1rem;
   font-weight: 20;
@@ -26,7 +26,7 @@ body {
 }
 
 .nav-container {
-  background-color: #1a083a;
+  background-color: #0053f1;
   display: flex;
   flex-direction: column;
 }
@@ -64,25 +64,26 @@ body {
   font-size: 20px;
   font-style: normal;
   line-height: 32px;
-  background-color: #1a083a;
+  background-color: #0053f1;
   color: white;
-  padding-bottom: 10%;
+  padding-bottom: 5%;
 }
 
 .firstContainer h1 {
   font-size: 35px;
   font-style: normal;
   line-height: 50px;
-  background-color: #1a083a;
+  background-color: #0053f1;
   color: white;
-  padding-top: 10%;
+  padding-top: 5%;
 }
 
 .buttonFirstContainer {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 10rem;
+  width: 12rem;
+  margin: 3px;
   padding: 40px 1px;
   box-shadow: none;
   border-radius: 8px;
@@ -95,80 +96,56 @@ body {
   font-size: 20px;
   font-style: normal;
   line-height: 32px;
-  background-color: #1a083a;
-  color: white;
+  background-color: white;
+  color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 
 .secondContainer h3 {
   font-size: 35px;
   padding: 20px;
+  margin-bottom: 2%;
 }
 
 .buttonSecondContainer {
-  width: 100px;
-  padding: 40px 20px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 20px;
+  width: 20rem;
+  margin: 3px;
+  padding: 50px 1px;
   box-shadow: none;
   border-radius: 8px;
   border: none;
-  background-color: white;
 }
 
 .thirdContainer {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  display: block;
+  background-color: #30386b;
   flex-direction: row;
   font-size: 20px;
   font-style: normal;
   line-height: 32px;
   color: white;
-  padding-top: 5%;
-  padding-bottom: 5%;
-}
-
-.thirdContainer h3 {
-  display: block;
-}
-
-.underThird {
-  width: 600px;
-}
-
-.underThird > h3 {
-  font-size: 45px;
-  margin: 20px 0 35px;
-}
-
-.underThird > p {
-  font-size: 16px;
-}
-
-.underThird2 {
-  width: 600px;
-}
-
-.underThird2 > h3 {
-  font-size: 25px;
-  border-bottom: 1px solid rgb(255, 255, 255);
-  padding-bottom: 15px;
-  margin-top: 20px;
-}
-
-.underThird2 > p {
-  font-size: 16px;
-  margin-bottom: 45px;
 }
 
 .fourthContainer {
   font-size: 20px;
   font-style: normal;
-  color: white;
-  border-top: 1px solid;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  color: black;
+}
+
+.fourthContainer2 {
+  font-size: 20px;
+  font-style: normal;
+  color: black;
+  padding-top: 1%;
 }
 
 .prix {
@@ -177,47 +154,11 @@ body {
   padding-top: 5%;
   padding-bottom: 5%;
 }
-
-.fourthContainer h3 {
-  display: block;
-}
-
 /* border fourth container*/
 
 .borderLeft {
   padding-left: 40px;
   margin-top: 30px;
-}
-
-.underFourth {
-  padding-top: 5%;
-}
-
-.underFourth2 {
-  width: 600px;
-  font-size: 16px;
-  font-style: normal;
-  line-height: 32px;
-  padding-top: 5%;
-}
-
-.underFourth > h3 {
-  font-size: 45px;
-  margin: 20px 0 35px;
-}
-
-.underFourth > p {
-  font-size: 16px;
-}
-
-.underFourth2 > h3 {
-  font-size: 25px;
-  padding-bottom: 35px;
-}
-
-.underFourth2 > p {
-  font-size: 16px;
-  margin-bottom: 45px;
 }
 
 .fifthContainer {

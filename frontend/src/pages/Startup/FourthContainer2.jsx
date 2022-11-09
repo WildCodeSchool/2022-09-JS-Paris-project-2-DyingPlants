@@ -4,7 +4,10 @@ import Button from "./Button";
 
 export default function FourthContainer2() {
   return (
-    <div className="fourthContainer">
+    <div
+      className="fourthContainer2"
+      style={{ width: "50%", marginLeft: "auto" }}
+    >
       <div className="borderLeft" style={{ borderLeft: "2px solid" }}>
         <h3>30% de votre cotisation est dédié aux frais de gestion de Luko</h3>
         <p>Service client, gestion de sinistre, innovation, etc.</p>

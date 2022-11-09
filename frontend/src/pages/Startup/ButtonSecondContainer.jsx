@@ -1,12 +1,12 @@
 import React from "react";
 import "./Startup.css";
 
-export default function buttonSecondContainer({ text }) {
+export default function ButtonSecondContainer({ text }) {
   return (
     <button
       type="button"
       className="buttonSecondContainer"
-      style={{ color: "black" }}
+      style={{ color: "#0053f1" }}
     >
       {text}
     </button>

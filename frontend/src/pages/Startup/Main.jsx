@@ -1,6 +1,7 @@
 import React from "react";
 import "./Startup.css";
 import SecondContainer from "./SecondContainer";
+import SecondContainer2 from "./SecondContainer2";
 import ThirdContainer from "./ThirdContainer";
 import ThirdContainer2 from "./ThirdContainer2";
 import FourthContainer from "./FourthContainer";
@@ -15,6 +16,7 @@ export default function Main() {
   return (
     <div>
       <SecondContainer />
+      <SecondContainer2 />
       <ThirdContainer />
       <ThirdContainer2 />
       <FourthContainer />

@@ -3,7 +3,7 @@ import "./Startup.css";
 
 export default function ThirdContainer2() {
   return (
-    <div className="underThird2">
+    <div className="thirdContainer">
       <h3>Un prix juste</h3>
       <p>
         Votre assurance augmente chaque année et vous ne savez pas pourquoi ?
