@@ -7,11 +7,9 @@ import imgFooter from "../../assets/imgPageResto/imgFooter.jpg";
 import imgSection3 from "../../assets/imgPageResto/imgPrez.jpg";
 import imgResto1 from "../../assets/imgPageResto/imgResto1.jpg";
 import imgDesk from "../../assets/imgPageResto/imgRestoDesk.jpg";
-import plat1 from "../../assets/imgPageResto/plat1.jpg";
-import plat2 from "../../assets/imgPageResto/plat2.jpg";
-import plat3 from "../../assets/imgPageResto/plat3.jpg";
-import plat4 from "../../assets/imgPageResto/plat4.jpg";
 
+import PaletteTop from "../../components/PaletteTop";
+import ItemBox from "./ItemBox";
 import "./Restaurant.css";
 /* import Palette from Palette; */
 
@@ -39,10 +37,9 @@ export default function Restaurant() {
       .then(function y(response) {
         colors = response.data.data[0].palette;
       })
-      .catch(function (error) {
+      .catch(function col(error) {
         console.error(error);
       });
-    test();
 
     setDarkColor(colors[0]);
     setPrimaryColor(colors[1]);
@@ -50,6 +47,18 @@ export default function Restaurant() {
     setBackColor(colors[3]);
     setWhatColor(colors[4]);
   };
+
+  const itemBox = [
+    { image: "../../src/assets/imgPageResto/plat1.jpg" },
+    { image: "../../src/assets/imgPageResto/plat2.jpg" },
+    { image: "../../src/assets/imgPageResto/plat3.jpg" },
+    { image: "../../src/assets/imgPageResto/plat1.jpg" },
+    { image: "../../src/assets/imgPageResto/plat2.jpg" },
+    { image: "../../src/assets/imgPageResto/plat3.jpg" },
+    { image: "../../src/assets/imgPageResto/plat4.jpg" },
+    { image: "../../src/assets/imgPageResto/plat4.jpg" },
+    { image: "../../src/assets/imgPageResto/plat4.jpg" },
+  ];
 
   return (
     <div
@@ -84,6 +93,23 @@ export default function Restaurant() {
         </div>
       </header>
       <main className="restoMain">
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            width: "100%",
+          }}
+        >
+          {" "}
+          <PaletteTop
+            darkColor={darkColor}
+            primaryColor={primaryColor}
+            backPageColor={backPageColor}
+            backColor={backColor}
+            whatColor={whatColor}
+          />
+        </div>
+
         <section
           style={{ backgroundColor: backColor }}
           className="restoSection1"
@@ -133,186 +159,17 @@ export default function Restaurant() {
             </div>
           </div>
           <div id="allItems">
-            <div style={{ backgroundColor: backColor }} className="itemBlock">
-              <img src={plat1} alt="item" className="itemPicture" />
-              <div className="itemDetails">
-                <div className="textTop">
-                  <h6 style={{ color: darkColor }}>Item</h6>
-                  <p style={{ color: whatColor }}>$ 00.00 USD</p>
-                </div>
-                <p style={{ color: whatColor }}>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                </p>
-                <input type="number" className="input" />
-                <button
-                  style={{ backgroundColor: primaryColor, color: darkColor }}
-                  type="button"
-                  className="buttonAdd"
-                >
-                  Add To Cart
-                </button>
-              </div>
-            </div>
-            <div style={{ backgroundColor: backColor }} className="itemBlock">
-              <img src={plat2} alt="item" className="itemPicture" />
-              <div className="itemDetails">
-                <div className="textTop">
-                  <h6 style={{ color: darkColor }}>Item</h6>
-                  <p style={{ color: whatColor }}>$ 00.00 USD</p>
-                </div>
-                <p style={{ color: whatColor }}>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                </p>
-                <input type="number" className="input" />
-                <button
-                  style={{ backgroundColor: primaryColor, color: darkColor }}
-                  type="button"
-                  className="buttonAdd"
-                >
-                  Add To Cart
-                </button>
-              </div>
-            </div>
-            <div style={{ backgroundColor: backColor }} className="itemBlock">
-              <img src={plat3} alt="item" className="itemPicture" />
-              <div className="itemDetails">
-                <div className="textTop">
-                  <h6 style={{ color: darkColor }}>Item</h6>
-                  <p style={{ color: whatColor }}>$ 00.00 USD</p>
-                </div>
-                <p style={{ color: whatColor }}>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                </p>
-                <input type="number" className="input" />
-                <button
-                  style={{ backgroundColor: primaryColor, color: darkColor }}
-                  type="button"
-                  className="buttonAdd"
-                >
-                  Add To Cart
-                </button>
-              </div>
-            </div>
-            <div style={{ backgroundColor: backColor }} className="itemBlock">
-              <img src={plat1} alt="item" className="itemPicture" />
-              <div className="itemDetails">
-                <div className="textTop">
-                  <h6 style={{ color: darkColor }}>Item</h6>
-                  <p style={{ color: whatColor }}>$ 00.00 USD</p>
-                </div>
-                <p style={{ color: whatColor }}>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                </p>
-                <input type="number" className="input" />
-                <button
-                  style={{ backgroundColor: primaryColor, color: darkColor }}
-                  type="button"
-                  className="buttonAdd"
-                >
-                  Add To Cart
-                </button>
-              </div>
-            </div>
-            <div style={{ backgroundColor: backColor }} className="itemBlock">
-              <img src={plat2} alt="item" className="itemPicture" />
-              <div className="itemDetails">
-                <div className="textTop">
-                  <h6 style={{ color: darkColor }}>Item</h6>
-                  <p style={{ color: whatColor }}>$ 00.00 USD</p>
-                </div>
-                <p style={{ color: whatColor }}>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                </p>
-                <input type="number" className="input" />
-                <button
-                  style={{ backgroundColor: primaryColor, color: darkColor }}
-                  type="button"
-                  className="buttonAdd"
-                >
-                  Add To Cart
-                </button>
-              </div>
-            </div>
-            <div style={{ backgroundColor: backColor }} className="itemBlock">
-              <img src={plat3} alt="item" className="itemPicture" />
-              <div className="itemDetails">
-                <div className="textTop">
-                  <h6 style={{ color: darkColor }}>Item</h6>
-                  <p style={{ color: whatColor }}>$ 00.00 USD</p>
-                </div>
-                <p style={{ color: whatColor }}>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                </p>
-                <input type="number" className="input" />
-                <button
-                  style={{ backgroundColor: primaryColor, color: darkColor }}
-                  type="button"
-                  className="buttonAdd"
-                >
-                  Add To Cart
-                </button>
-              </div>
-            </div>
-            <div style={{ backgroundColor: backColor }} className="itemBlock">
-              <img src={plat4} alt="item" className="itemPicture" />
-              <div className="itemDetails">
-                <div className="textTop">
-                  <h6 style={{ color: darkColor }}>Item</h6>
-                  <p style={{ color: whatColor }}>$ 00.00 USD</p>
-                </div>
-                <p style={{ color: whatColor }}>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                </p>
-                <input type="number" className="input" />
-                <button
-                  style={{ backgroundColor: primaryColor, color: darkColor }}
-                  type="button"
-                  className="buttonAdd"
-                >
-                  Add To Cart
-                </button>
-              </div>
-            </div>
-            <div style={{ backgroundColor: backColor }} className="itemBlock">
-              <img src={plat4} alt="item" className="itemPicture" />
-              <div className="itemDetails">
-                <div className="textTop">
-                  <h6 style={{ color: darkColor }}>Item</h6>
-                  <p style={{ color: whatColor }}>$ 00.00 USD</p>
-                </div>
-                <p style={{ color: whatColor }}>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                </p>
-                <input type="number" className="input" />
-                <button
-                  style={{ backgroundColor: primaryColor, color: darkColor }}
-                  type="button"
-                  className="buttonAdd"
-                >
-                  Add To Cart
-                </button>
-              </div>
-            </div>
-            <div style={{ backgroundColor: backColor }} className="itemBlock">
-              <img src={plat4} alt="item" className="itemPicture" />
-              <div className="itemDetails">
-                <div className="textTop">
-                  <h6 style={{ color: darkColor }}>Item</h6>
-                  <p style={{ color: whatColor }}>$ 00.00 USD</p>
-                </div>
-                <p style={{ color: whatColor }}>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                </p>
-                <input type="number" className="input" />
-                <button
-                  style={{ backgroundColor: primaryColor, color: darkColor }}
-                  type="button"
-                  className="buttonAdd"
-                >
-                  Add To Cart
-                </button>
-              </div>
-            </div>
+            {itemBox.map((i) => {
+              return (
+                <ItemBox
+                  backColor={backColor}
+                  image={i.image}
+                  darkColor={darkColor}
+                  whatColor={whatColor}
+                  primaryColor={primaryColor}
+                />
+              );
+            })}
           </div>
           <button
             style={{ backgroundColor: primaryColor, color: darkColor }}

@@ -17,13 +17,11 @@
   flex-direction: row;
   list-style: none;
   gap: 1rem;
-  background-color: #e6ae7c;
   width: 100%;
 }
 
 .navBarEcommerce > li {
   padding: 1rem;
-  color: whitesmoke;
   font-size: 25px;
 }
 
@@ -63,9 +61,7 @@
 
 .bannerImg > h1 {
   font-size: 2.5em;
-  border: 0.3rem solid #e6ae7c;
   padding: 0.3em;
-  color: #e6ae7c;
   margin-bottom: 5%;
 }
 
@@ -85,7 +81,6 @@
 
 .collection {
   height: auto;
-  border: 2px solid #e6ae7c;
   border-radius: 5px;
   width: 100%;
   height: 100%;
@@ -95,7 +90,6 @@
 
 .storeInfo {
   height: auto;
-  border: 2px solid #e6ae7c;
   border-radius: 5px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -121,7 +115,6 @@
   width: 100%;
   height: 100%;
   text-align: center;
-  background-color: #e6ae7c;
 }
 
 .collectionContainer > p {
@@ -150,9 +143,7 @@
 .titleProduct {
   margin-bottom: 10px;
   text-align: center;
-  background-color: #e6ae7c;
   border-radius: 5px;
-  color: whitesmoke;
   font-size: 25px;
   padding: 2%;
   width: 96%;
@@ -203,9 +194,7 @@
 .titleProduct {
   margin-bottom: 10px;
   text-align: center;
-  background-color: #e6ae7c;
   border-radius: 5px;
-  color: whitesmoke;
   font-size: 25px;
   padding: 2%;
   width: 96%;
