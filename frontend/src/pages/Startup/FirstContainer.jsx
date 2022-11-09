@@ -1,10 +1,11 @@
 import React from "react";
 import "./Startup.css";
 
-export default function FirstContainer() {
+export default function FirstContainer({ colors }) {
+  const { background1, background2, background3, font1, font2 } = colors;
   return (
     <header>
-      <div className="firstContainer">
+      <div className="firstContainer" style={{ backgroundColor: background1 }}>
         <div style={{ width: "70%", margin: "auto" }}>
           <div style={{ width: "70%" }}>
             <h1>
