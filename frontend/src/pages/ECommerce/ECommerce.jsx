@@ -6,7 +6,6 @@ import Content from "./EcommerceContent";
 import EcommerceHeader from "./EcommerceHeader";
 import Footer from "./EcommerceFooter";
 
-
 export default function ECommerce() {
   const [navbarFooter, setDarkColor] = useState("rgb(44, 44, 44)");
   const [primaryColor, setPrimaryColor] = useState("rgb(148, 148, 148)");
