@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import "./ECommerce.css";
 import axios from "axios";
-import PaletteTop from "../../components/PaletteTop";
+import PaletteTestLeo from "@components/paletteTestLeo/PaletteTestLeo";
 import Content from "./EcommerceContent";
 import EcommerceHeader from "./EcommerceHeader";
 import Footer from "./EcommerceFooter";
-
 
 export default function ECommerce() {
   const [navbarFooter, setDarkColor] = useState("rgb(44, 44, 44)");
@@ -167,12 +166,14 @@ export default function ECommerce() {
         }}
       >
         {" "}
-        <PaletteTop
-          darkColor={navbarFooter}
-          primaryColor={primaryColor}
-          backPageColor={backPageColor}
-          backColor={backColor}
-          whatColor={whatColor}
+        <PaletteTestLeo
+          labelAndColorArray={[
+            ["darkColor", navbarFooter, setDarkColor],
+            ["primaryColor", primaryColor, setPrimaryColor],
+            ["backPageColor", backPageColor, setBackPageColor],
+            ["backColor", backColor, setBackColor],
+            ["whatColor", whatColor, setWhatColor],
+          ]}
         />
       </div>
     </div>
