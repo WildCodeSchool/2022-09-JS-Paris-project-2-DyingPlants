@@ -180,11 +180,19 @@ export default function Restaurant() {
       </footer>
       <Palette
         labelAndColorArray={[
-          ["Title", darkColor, setDarkColor],
-          ["primaryColor", primaryColor, setPrimaryColor],
-          ["Background Page", backPageColor, setBackPageColor],
-          ["Text Background", backColor, setBackColor],
-          ["Paragraphe", whatColor, setWhatColor],
+          { label: "Title", color: darkColor, setter: setDarkColor },
+          {
+            label: "primaryColor",
+            color: primaryColor,
+            setter: setPrimaryColor,
+          },
+          {
+            label: "Background Page",
+            color: backPageColor,
+            setter: setBackPageColor,
+          },
+          { label: "Text Background", color: backColor, setter: setBackColor },
+          { label: "Paragraphe", color: whatColor, setter: setWhatColor },
         ]}
       />
     </div>
