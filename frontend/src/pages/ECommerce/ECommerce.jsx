@@ -5,6 +5,7 @@ import PaletteTop from "../../components/PaletteTop";
 import Content from "./EcommerceContent";
 import EcommerceHeader from "./EcommerceHeader";
 import Footer from "./EcommerceFooter";
+import Palette from "../../components/palette/Palette";
 
 export default function ECommerce() {
   const [navbarFooter, setDarkColor] = useState("rgb(44, 44, 44)");
@@ -166,12 +167,14 @@ export default function ECommerce() {
         }}
       >
         {" "}
-        <PaletteTop
-          darkColor={navbarFooter}
-          primaryColor={primaryColor}
-          backPageColor={backPageColor}
-          backColor={backColor}
-          whatColor={whatColor}
+        <Palette
+          labelAndColorArray={[
+            ["navbarFooter", navbarFooter, setDarkColor],
+            ["primaryColor", primaryColor, setPrimaryColor],
+            ["backPageColor", backPageColor, setBackPageColor],
+            ["backColor", backColor, setBackColor],
+            ["whatColor", whatColor, setWhatColor],
+          ]}
         />
       </div>
     </div>

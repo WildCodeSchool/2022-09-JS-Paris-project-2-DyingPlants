@@ -1,13 +1,17 @@
-import axios from "axios";
+import {
+  fetchFromInput,
+  monochromOrComplementaryFetch,
+  topPaletteFetch,
+} from "@services/utils";
 import { useState } from "react";
 import { AiFillLock, AiOutlineDoubleRight } from "react-icons/ai";
 import "./Palette.css";
 
 export default function Palette({ labelAndColorArray }) {
   // palette top//
-  const labels = labelAndColorArray.map((elt) => elt[0]);
-  const currentColors = labelAndColorArray.map((elet) => elet[1]);
-  const setters = labelAndColorArray.map((elt) => elt[2]);
+  const labels = labelAndColorArray.map((elt) => elt.label);
+  const currentColors = labelAndColorArray.map((elt) => elt.color);
+  const setters = labelAndColorArray.map((elt) => elt.setter);
 
   // palette bottom//
   const [fetchType, setFetchType] = useState("complementary");
@@ -27,6 +31,7 @@ export default function Palette({ labelAndColorArray }) {
       colorPerDivItem[i] === null || colorPerDivItem[i] === 4
         ? fetchedColors[0]
         : fetchedColors[colorPerDivItem[i] + 1];
+
     setters[i](nextColor);
 
     setColorsPerDivItem((prev) => {
@@ -36,90 +41,15 @@ export default function Palette({ labelAndColorArray }) {
     });
   };
 
-  async function colorMindBrandNewFetch() {
-    const response = await axios({
-      method: "post",
-      url: "http://colormind.io/api/",
-      data: JSON.stringify({ model: "default" }),
-      config: {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      },
-    });
-    setFetchedColors(
-      response.data.result.map((elt) => `rgb(${elt[0]}, ${elt[1]}, ${elt[2]})`)
-    );
-  }
-
-  async function colorMindFetchFromColors() {
-    const input = () => {
-      function hexToRgb(hex) {
-        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-        return result
-          ? [
-              parseInt(result[1], 16),
-              parseInt(result[2], 16),
-              parseInt(result[3], 16),
-            ]
-          : null;
-      }
-
-      const inputs = [];
-      for (let i = 0; i < 5; i += 1) {
-        if (typeof lockedColors[i] !== "undefined") {
-          inputs.push(
-            fetchedColors[lockedColors[i]].includes("#")
-              ? hexToRgb(fetchedColors[lockedColors[i]])
-              : fetchedColors[lockedColors[i]].match(/\d+/g)
-          );
-        } else {
-          inputs.push("N");
-        }
-      }
-      setLockedColors([]);
-      return inputs;
-    };
-
-    const result = await axios({
-      method: "post",
-      url: "http://colormind.io/api/",
-      data: JSON.stringify({
-        model: "default",
-        input: input(),
-      }),
-      config: {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      },
-    });
-    setFetchedColors(
-      result.data.result.map((elt) => `rgb(${elt[0]}, ${elt[1]}, ${elt[2]})`)
-    );
-  }
-
-  async function rapidApiFetch() {
-    const response = await axios.get(
-      `https://random-palette-generator.p.rapidapi.com/palette/${fetchType}/1/5`,
-      {
-        headers: {
-          "X-RapidAPI-Key":
-            "f6b8a1ebfamsh0541ebd7a0ace36p1b5919jsnc2c6a020858d",
-          "X-RapidAPI-Host": "random-palette-generator.p.rapidapi.com",
-        },
-      }
-    );
-    setFetchedColors(response.data.data[0].palette);
-  }
-
   async function handleFetch() {
     if (lockedColors.length) {
-      await colorMindFetchFromColors();
+      setFetchedColors(await fetchFromInput(lockedColors, fetchedColors));
+      /* await colorMindFetchFromColors(); */
     } else if (fetchType === "topPalette") {
-      await colorMindBrandNewFetch();
+      setFetchedColors(await topPaletteFetch());
+      /* await colorMindBrandNewFetch(); */
     } else {
-      await rapidApiFetch();
+      setFetchedColors(await monochromOrComplementaryFetch(fetchType));
     }
   }
 
