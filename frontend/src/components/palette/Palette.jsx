@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { AiFillLock } from "react-icons/ai";
+import { AiFillLock, AiOutlineDoubleRight } from "react-icons/ai";
 import "./Palette.css";
 
 export default function Palette({ labelAndColorArray }) {
@@ -170,11 +170,10 @@ export default function Palette({ labelAndColorArray }) {
                 borderTopRightRadius: i === 4 ? "10px" : "initial",
               }}
             >
-              <button type="button" onClick={() => handleChangeColor(i)}>
-                change
-              </button>
+              d
             </div>{" "}
             <div
+              className="underColorBox"
               style={{
                 backgroundColor: "white",
                 width: "100%",
@@ -182,7 +181,7 @@ export default function Palette({ labelAndColorArray }) {
                 flexDirection: "column",
                 justifyContent: "space-evenly",
                 paddingTop: "5px",
-                paddingBottom: "5px",
+                paddingBottom: "10px",
                 borderBottomLeftRadius: i === 0 ? "10px" : "initial",
                 borderBottomRightRadius: i === 4 ? "10px" : "initial",
               }}
@@ -192,7 +191,7 @@ export default function Palette({ labelAndColorArray }) {
                 className="textPalette"
                 style={{
                   textAlign: "center",
-                  fontSize: "10px",
+                  fontSize: "12px",
                 }}
               >
                 {labels[i]}
@@ -201,11 +200,18 @@ export default function Palette({ labelAndColorArray }) {
                 className="textPalette"
                 style={{
                   textAlign: "center",
-                  fontSize: "10px",
+                  fontSize: "12px",
                 }}
               >
                 {elt}
               </p>
+              <button
+                className="changeButton"
+                type="button"
+                onClick={() => handleChangeColor(i)}
+              >
+                <AiOutlineDoubleRight />
+              </button>
             </div>
           </div>
         ))}
@@ -265,7 +271,11 @@ export default function Palette({ labelAndColorArray }) {
                   type="button"
                   aria-label="Save"
                 >
-                  <AiFillLock />
+                  <AiFillLock
+                    style={{
+                      color: "white",
+                    }}
+                  />
                 </button>
               </div>
             );
@@ -295,13 +305,12 @@ export default function Palette({ labelAndColorArray }) {
               name="fetchType"
               value="complementary"
               checked={fetchType === "complementary"}
-              style={{ marginRight: "10px" }}
               onChange={(e) => {
                 setFetchType(e.target.value);
               }}
             />
             <label htmlFor="complementary" style={{ marginRight: "15px" }}>
-              complementary
+              Complementary
             </label>
 
             <input
@@ -310,19 +319,17 @@ export default function Palette({ labelAndColorArray }) {
               name="fetchType"
               value="topPalette"
               checked={fetchType === "topPalette"}
-              style={{ marginRight: "10px" }}
               onChange={(e) => {
                 setFetchType(e.target.value);
               }}
             />
             <label htmlFor="topPalette" style={{ marginRight: "15px" }}>
-              Top palette
+              Top Palette
             </label>
 
             <input
               type="radio"
               id="monochromatic"
-              style={{ marginRight: "15px" }}
               name="fetchType"
               value="monochromatic"
               checked={fetchType === "monochromatic"}
@@ -330,9 +337,9 @@ export default function Palette({ labelAndColorArray }) {
                 setFetchType(e.target.value);
               }}
             />
-            <label htmlFor="monochromatic">monochromatic</label>
+            <label htmlFor="monochromatic">Monochromatic</label>
           </div>
-          <button type="button" onClick={handleFetch}>
+          <button id="generateButton" type="button" onClick={handleFetch}>
             Generate Colors
           </button>
         </form>
