@@ -1,13 +1,17 @@
-import axios from "axios";
+import {
+  fetchFromInput,
+  monochromOrComplementaryFetch,
+  topPaletteFetch,
+} from "@services/utils";
 import { useState } from "react";
-import { AiFillLock } from "react-icons/ai";
-import "./PaletteTestLeo.css";
+import { AiFillLock, AiOutlineDoubleRight } from "react-icons/ai";
+import "./Palette.css";
 
-export default function PaletteTestLeo({ labelAndColorArray }) {
+export default function Palette({ labelAndColorArray }) {
   // palette top//
-  const labels = labelAndColorArray.map((elt) => elt[0]);
-  const currentColors = labelAndColorArray.map((elet) => elet[1]);
-  const setters = labelAndColorArray.map((elt) => elt[2]);
+  const labels = labelAndColorArray.map((elt) => elt.label);
+  const currentColors = labelAndColorArray.map((elt) => elt.color);
+  const setters = labelAndColorArray.map((elt) => elt.setter);
 
   // palette bottom//
   const [fetchType, setFetchType] = useState("complementary");
@@ -27,6 +31,7 @@ export default function PaletteTestLeo({ labelAndColorArray }) {
       colorPerDivItem[i] === null || colorPerDivItem[i] === 4
         ? fetchedColors[0]
         : fetchedColors[colorPerDivItem[i] + 1];
+
     setters[i](nextColor);
 
     setColorsPerDivItem((prev) => {
@@ -36,90 +41,15 @@ export default function PaletteTestLeo({ labelAndColorArray }) {
     });
   };
 
-  async function colorMindBrandNewFetch() {
-    const response = await axios({
-      method: "post",
-      url: "http://colormind.io/api/",
-      data: JSON.stringify({ model: "default" }),
-      config: {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      },
-    });
-    setFetchedColors(
-      response.data.result.map((elt) => `rgb(${elt[0]}, ${elt[1]}, ${elt[2]})`)
-    );
-  }
-
-  async function colorMindFetchFromColors() {
-    const input = () => {
-      function hexToRgb(hex) {
-        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-        return result
-          ? [
-              parseInt(result[1], 16),
-              parseInt(result[2], 16),
-              parseInt(result[3], 16),
-            ]
-          : null;
-      }
-
-      const inputs = [];
-      for (let i = 0; i < 5; i += 1) {
-        if (typeof lockedColors[i] !== "undefined") {
-          inputs.push(
-            fetchedColors[lockedColors[i]].includes("#")
-              ? hexToRgb(fetchedColors[lockedColors[i]])
-              : fetchedColors[lockedColors[i]].match(/\d+/g)
-          );
-        } else {
-          inputs.push("N");
-        }
-      }
-      setLockedColors([]);
-      return inputs;
-    };
-
-    const result = await axios({
-      method: "post",
-      url: "http://colormind.io/api/",
-      data: JSON.stringify({
-        model: "default",
-        input: input(),
-      }),
-      config: {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      },
-    });
-    setFetchedColors(
-      result.data.result.map((elt) => `rgb(${elt[0]}, ${elt[1]}, ${elt[2]})`)
-    );
-  }
-
-  async function rapidApiFetch() {
-    const response = await axios.get(
-      `https://random-palette-generator.p.rapidapi.com/palette/${fetchType}/1/5`,
-      {
-        headers: {
-          "X-RapidAPI-Key":
-            "f6b8a1ebfamsh0541ebd7a0ace36p1b5919jsnc2c6a020858d",
-          "X-RapidAPI-Host": "random-palette-generator.p.rapidapi.com",
-        },
-      }
-    );
-    setFetchedColors(response.data.data[0].palette);
-  }
-
   async function handleFetch() {
     if (lockedColors.length) {
-      await colorMindFetchFromColors();
+      setFetchedColors(await fetchFromInput(lockedColors, fetchedColors));
+      /* await colorMindFetchFromColors(); */
     } else if (fetchType === "topPalette") {
-      await colorMindBrandNewFetch();
+      setFetchedColors(await topPaletteFetch());
+      /* await colorMindBrandNewFetch(); */
     } else {
-      await rapidApiFetch();
+      setFetchedColors(await monochromOrComplementaryFetch(fetchType));
     }
   }
 
@@ -131,19 +61,20 @@ export default function PaletteTestLeo({ labelAndColorArray }) {
         flexDirection: "column",
         justifyContent: "space-evenly",
         position: "fixed",
-        height: "250px",
-        width: "100%",
+        height: "300px",
         left: 0,
         right: 0,
         margin: "0 auto",
         bottom: "100px",
-        backgroundColor: "rgba(255, 255, 255, .8)",
+        width: "80%",
+        maxWidth: "800px",
       }}
     >
       <div
         className="paletteTop"
         style={{
-          width: "80%",
+          width: "100%",
+          minHeigth: "40%",
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-evenly",
@@ -156,29 +87,61 @@ export default function PaletteTestLeo({ labelAndColorArray }) {
               justifyContent: "center",
               flexDirection: "column",
               alignItems: "center",
+              minWidth: "20%",
+              width: "20%",
             }}
           >
             <div
               className="colorBox"
               style={{
                 backgroundColor: elt,
+                height: "80px",
+                borderTopLeftRadius: i === 0 ? "10px" : "initial",
+                borderTopRightRadius: i === 4 ? "10px" : "initial",
               }}
             >
-              <button type="button" onClick={() => handleChangeColor(i)}>
-                change
-              </button>
+              d
+            </div>{" "}
+            <div
+              className="underColorBox"
+              style={{
+                backgroundColor: "white",
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-evenly",
+                paddingTop: "5px",
+                paddingBottom: "10px",
+                borderBottomLeftRadius: i === 0 ? "10px" : "initial",
+                borderBottomRightRadius: i === 4 ? "10px" : "initial",
+              }}
+            >
+              {" "}
               <p
                 className="textPalette"
-                style={{ textAlign: "center", marginTop: "10px" }}
+                style={{
+                  textAlign: "center",
+                  fontSize: "12px",
+                }}
               >
                 {labels[i]}
               </p>
               <p
                 className="textPalette"
-                style={{ textAlign: "center", marginTop: "10px" }}
+                style={{
+                  textAlign: "center",
+                  fontSize: "12px",
+                }}
               >
                 {elt}
               </p>
+              <button
+                className="changeButton"
+                type="button"
+                onClick={() => handleChangeColor(i)}
+              >
+                <AiOutlineDoubleRight />
+              </button>
             </div>
           </div>
         ))}
@@ -186,18 +149,18 @@ export default function PaletteTestLeo({ labelAndColorArray }) {
       <div
         className="paletteBas"
         style={{
-          width: "80%",
           minHeight: "40%",
           maxHeight: "40%",
+          width: "100%",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-evenly",
+          justifyContent: "center",
         }}
       >
         <div
           className="colorsContainer"
           style={{
-            width: "80%",
+            width: "100%",
             display: "flex",
             justifyContent: "space-between",
             margin: "0 auto",
@@ -214,6 +177,9 @@ export default function PaletteTestLeo({ labelAndColorArray }) {
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
+                  height: "80px",
+                  borderTopLeftRadius: i === 0 ? "10px" : "initial",
+                  borderTopRightRadius: i === 4 ? "10px" : "initial",
                 }}
               >
                 <button
@@ -235,7 +201,11 @@ export default function PaletteTestLeo({ labelAndColorArray }) {
                   type="button"
                   aria-label="Save"
                 >
-                  <AiFillLock />
+                  <AiFillLock
+                    style={{
+                      color: "white",
+                    }}
+                  />
                 </button>
               </div>
             );
@@ -245,11 +215,14 @@ export default function PaletteTestLeo({ labelAndColorArray }) {
           className="inputContainer"
           style={{
             display: "flex",
-            width: "70%",
+            width: "100%",
+            height: "40px",
             margin: "0 auto",
             gap: "15px",
             alignItems: "center",
-            marginTop: "20px",
+            backgroundColor: "white",
+            borderBottomLeftRadius: "10px",
+            borderBottomRightRadius: "10px",
           }}
         >
           <div
@@ -262,13 +235,12 @@ export default function PaletteTestLeo({ labelAndColorArray }) {
               name="fetchType"
               value="complementary"
               checked={fetchType === "complementary"}
-              style={{ marginRight: "10px" }}
               onChange={(e) => {
                 setFetchType(e.target.value);
               }}
             />
             <label htmlFor="complementary" style={{ marginRight: "15px" }}>
-              complementary
+              Complementary
             </label>
 
             <input
@@ -277,19 +249,17 @@ export default function PaletteTestLeo({ labelAndColorArray }) {
               name="fetchType"
               value="topPalette"
               checked={fetchType === "topPalette"}
-              style={{ marginRight: "10px" }}
               onChange={(e) => {
                 setFetchType(e.target.value);
               }}
             />
             <label htmlFor="topPalette" style={{ marginRight: "15px" }}>
-              Top palette
+              Top Palette
             </label>
 
             <input
               type="radio"
               id="monochromatic"
-              style={{ marginRight: "15px" }}
               name="fetchType"
               value="monochromatic"
               checked={fetchType === "monochromatic"}
@@ -297,9 +267,9 @@ export default function PaletteTestLeo({ labelAndColorArray }) {
                 setFetchType(e.target.value);
               }}
             />
-            <label htmlFor="monochromatic">monochromatic</label>
+            <label htmlFor="monochromatic">Monochromatic</label>
           </div>
-          <button type="button" onClick={handleFetch}>
+          <button id="generateButton" type="button" onClick={handleFetch}>
             Generate Colors
           </button>
         </form>

@@ -1,6 +1,6 @@
-import PaletteTestLeo from "@components/paletteTestLeo/PaletteTestLeo";
 import axios from "axios";
 import { useState } from "react";
+import Palette from "../../components/palette/Palette";
 import burgerMenu from "../../assets/imgPageResto/burgerMenu.png";
 import shop from "../../assets/imgPageResto/cadi.png";
 import imgFooter from "../../assets/imgPageResto/imgFooter.jpg";
@@ -19,34 +19,6 @@ export default function Restaurant() {
   const [backPageColor, setBackPageColor] = useState("rgb(230, 230, 230)");
   const [backColor, setBackColor] = useState("white");
   const [whatColor, setWhatColor] = useState("rgb(55, 55, 55)");
-
-  const options = {
-    method: "GET",
-    url: "https://random-palette-generator.p.rapidapi.com/palette/Shades/1/5",
-    headers: {
-      "X-RapidAPI-Key": "f6b8a1ebfamsh0541ebd7a0ace36p1b5919jsnc2c6a020858d",
-      "X-RapidAPI-Host": "random-palette-generator.p.rapidapi.com",
-    },
-  };
-
-  let colors;
-
-  const fetchColors = async () => {
-    const test = await axios
-      .request(options)
-      .then(function y(response) {
-        colors = response.data.data[0].palette;
-      })
-      .catch(function col(error) {
-        console.error(error);
-      });
-
-    setDarkColor(colors[0]);
-    setPrimaryColor(colors[1]);
-    setBackPageColor(colors[2]);
-    setBackColor(colors[3]);
-    setWhatColor(colors[4]);
-  };
 
   const itemBox = [
     { image: "../../src/assets/imgPageResto/plat1.jpg" },
@@ -83,7 +55,6 @@ export default function Restaurant() {
           </nav>
 
           <button
-            onClick={fetchColors}
             style={{ backgroundColor: primaryColor }}
             type="button"
             id="buttonAdd"
@@ -207,13 +178,21 @@ export default function Restaurant() {
         <h3 style={{ color: darkColor }}>Thank you for using our app.</h3>
         <img src={imgFooter} alt="" id="secFootPic" />
       </footer>
-      <PaletteTestLeo
+      <Palette
         labelAndColorArray={[
-          ["darkColor", darkColor, setDarkColor],
-          ["primaryColor", primaryColor, setPrimaryColor],
-          ["backPageColor", backPageColor, setBackPageColor],
-          ["backColor", backColor, setBackColor],
-          ["whatColor", whatColor, setWhatColor],
+          { label: "Title", color: darkColor, setter: setDarkColor },
+          {
+            label: "primaryColor",
+            color: primaryColor,
+            setter: setPrimaryColor,
+          },
+          {
+            label: "Background Page",
+            color: backPageColor,
+            setter: setBackPageColor,
+          },
+          { label: "Text Background", color: backColor, setter: setBackColor },
+          { label: "Paragraphe", color: whatColor, setter: setWhatColor },
         ]}
       />
     </div>

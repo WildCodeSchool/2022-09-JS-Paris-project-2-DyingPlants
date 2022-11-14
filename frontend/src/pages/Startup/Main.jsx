@@ -18,6 +18,7 @@ export default function Main({ colors }) {
   return (
     <div>
       <SecondContainer colors={colors} />
+
       <ThirdContainer colors={colors} />
       <ThirdContainer2 colors={colors} />
       <FourthContainer colors={colors} />
