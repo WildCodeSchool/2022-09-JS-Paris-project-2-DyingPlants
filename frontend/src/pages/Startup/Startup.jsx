@@ -4,7 +4,7 @@ import Header from "./Header";
 import Main from "./Main";
 
 export default function Startup() {
-  const [background1, setBackground1] = useState("#005df6");
+  const [background1, setBackground1] = useState("#0050E4");
   const [background2, setBackground2] = useState("#fff");
   const [background3, setBackground3] = useState("#112282");
   const [font1, setFont1] = useState("#fff");
@@ -19,7 +19,7 @@ export default function Startup() {
   };
 
   return (
-    <div>
+    <div className="startupPage">
       <Header colors={colors} />
       <Main colors={colors} />
     </div>

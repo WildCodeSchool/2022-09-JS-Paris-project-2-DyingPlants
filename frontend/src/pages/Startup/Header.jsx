@@ -1,15 +1,15 @@
-import React from "react";
-import "./Startup.css";
 import FirstContainer from "./FirstContainer";
-import FirstContainer2 from "./FirstContainer2";
 import NavContainer from "./NavContainer";
+import "./Startup.css";
 
 export default function Header({ colors }) {
+  const { background1 } = colors;
   return (
-    <div>
-      <NavContainer colors={colors} />
-      <FirstContainer colors={colors} />
-      <FirstContainer2 colors={colors} />
+    <div className="headerContainer" style={{ backgroundColor: background1 }}>
+      <div id="headerInnerDiv">
+        <NavContainer colors={colors} />
+        <FirstContainer colors={colors} />
+      </div>
     </div>
   );
 }
