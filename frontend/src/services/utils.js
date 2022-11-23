@@ -30,16 +30,12 @@ export async function topPaletteFetch() {
   );
 }
 
-export async function fetchFromInput(lockedColors, fetchedColors) {
+export async function fetchFromInput(selectedColors) {
   const input = () => {
     const inputs = [];
     for (let i = 0; i < 5; i += 1) {
-      if (typeof lockedColors[i] !== "undefined") {
-        inputs.push(
-          fetchedColors[lockedColors[i]].includes("#")
-            ? hexToRgb(fetchedColors[lockedColors[i]])
-            : fetchedColors[lockedColors[i]].match(/\d+/g)
-        );
+      if (typeof selectedColors[i] !== "undefined") {
+        inputs.push(selectedColors[i].match(/\d+/g));
       } else {
         inputs.push("N");
       }
