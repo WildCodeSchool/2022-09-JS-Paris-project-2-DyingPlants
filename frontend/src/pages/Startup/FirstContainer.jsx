@@ -8,6 +8,12 @@ import "./Startup.css";
 
 export default function FirstContainer({ colors }) {
   const { background1, background2, background3, font1, font2 } = colors;
+
+  const newsBannerColor = () => {
+    const [a, b, c] = font1.match(/\d+/g);
+    return `rgba(${a}, ${b}, ${c}, .70)`;
+  };
+
   return (
     <div>
       <header className="startupHeader">
@@ -15,20 +21,24 @@ export default function FirstContainer({ colors }) {
           <h2>
             L'assurance qui vous dit tout <br /> (sur tout)
           </h2>
-          <p>
+          <p className="mediumOpac">
             Y'a pas de loup chez Luko : des contrats clairs, des remboursements
             2x plus rapides, un modèle 100% digital et transparent. Comme ça,
             vous gagnez du temps, et de l'argent.
           </p>
           <div id="headerButtonContainer">
-            <button type="button" className="headerButton">
+            <button
+              type="button"
+              className="headerButton"
+              style={{ backgroundColor: background2, color: font2 }}
+            >
               <BsFillHouseDoorFill size="37px" color={background1} />
               Assurance habitation
             </button>
             <button
               type="button"
               className="headerButton"
-              style={{ color: "black" }}
+              style={{ backgroundColor: background2, color: font2 }}
             >
               <AiFillBank size="37px" color={background1} />
               Assurance emprunteur
@@ -36,7 +46,7 @@ export default function FirstContainer({ colors }) {
             <button
               type="button"
               className="headerButton"
-              style={{ color: "black" }}
+              style={{ backgroundColor: background2, color: font2 }}
             >
               <TbScooter size="37px" color={background1} />
               Trottinettes électriques
@@ -50,7 +60,7 @@ export default function FirstContainer({ colors }) {
         </div>
       </header>
       <div>
-        <div id="googleReview">
+        <div className="googleReview">
           <p>
             Google <span>Reviews</span>
           </p>
@@ -59,13 +69,22 @@ export default function FirstContainer({ colors }) {
             <RiStarSFill color="gold" size="1.5rem" />
             <RiStarSFill color="gold" size="1.5rem" />
             <RiStarSFill color="gold" size="1.5rem" />
-            <RiStarSFill color="rgba(255, 255, 255, .7)" size="1.5rem" />
+            <RiStarSFill color="gold" size="1.5rem" />
           </div>
         </div>
         <div id="newsBanners">
-          <div className="newsBanner" />
-          <div className="newsBanner" />
-          <div className="newsBanner" />
+          <div
+            className="newsBanner"
+            style={{ backgroundColor: newsBannerColor() }}
+          />
+          <div
+            className="newsBanner"
+            style={{ backgroundColor: newsBannerColor() }}
+          />
+          <div
+            className="newsBanner"
+            style={{ backgroundColor: newsBannerColor() }}
+          />
         </div>
       </div>
     </div>

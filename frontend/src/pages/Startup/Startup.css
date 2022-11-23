@@ -1,12 +1,13 @@
-:root {
-  --grayTransparent: rgba(255, 255, 255, 0.7);
-  --gray: rgb(163, 163, 163);
+* {
+  padding: 0;
+  margin: 0;
 }
 
 .startupPage {
   font-family: "Roboto";
   font-weight: 400;
   letter-spacing: 0.4px;
+  position: relative;
 }
 
 body {
@@ -16,21 +17,24 @@ body {
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2.8rem;
+  letter-spacing: 0.075rem;
+  opacity: 0.9;
 }
 
 #logo {
   font-family: "Righteous";
   text-decoration: none;
   align-items: center;
-  color: white;
   font-size: 1.5rem;
 }
 
+.navButton {
+  background-color: white;
+}
 #headerInnerDiv {
   width: 85%;
   margin: 0 auto;
-  color: white;
 }
 
 #navBar {
@@ -41,7 +45,6 @@ h2 {
   align-items: center;
   margin: 0 auto;
   border-bottom: 1px solid;
-  color: white;
   font-weight: 400;
 }
 
@@ -67,8 +70,12 @@ h2 {
   list-style: none;
 }
 
+#navBar .navButton {
+  font-size: 0.9rem;
+}
+
 .navButton {
-  padding: 10px 15px;
+  padding: 10px 20px;
   box-shadow: none;
   border-radius: 8px;
   border: none;
@@ -86,13 +93,11 @@ h2 {
   font-weight: 450;
   font-style: normal;
   line-height: 4rem;
-  color: white;
   margin: 0 0 20px 0;
 }
 
 header p {
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.7);
   line-height: 1.9rem;
   width: 100%;
   margin-bottom: 5.5rem;
@@ -111,7 +116,6 @@ header p {
   box-shadow: none;
   border-radius: 8px;
   border: none;
-  background-color: white;
   width: 100%;
   font-size: 1rem;
   height: 105px;
@@ -129,8 +133,6 @@ header p {
   font-size: 20px;
   font-style: normal;
   line-height: 32px;
-  background-color: white;
-  color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -138,19 +140,19 @@ header p {
   padding-bottom: 3%;
 }
 
-#googleReview {
+.googleReview {
   font-family: Open sans;
   display: flex;
   align-items: center;
   gap: 10px;
   margin: 1rem 0 5rem 0;
 }
-#googleReview span {
+.googleReview span {
   font-size: 0.7rem;
   font-weight: light;
   font-family: Roboto;
 }
-#googleReview div {
+.googleReview div {
   display: flex;
   align-items: center;
 }
@@ -165,7 +167,6 @@ header p {
 }
 
 #newsBanners div {
-  background-color: var(--grayTransparent);
   width: 300px;
   height: 55px;
 }
@@ -202,19 +203,20 @@ header p {
 /* SECOND CONTAINER */
 
 #secondContainer {
-  margin: 5.5rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 5rem 0;
 }
 #secondContainerInnerDiv {
   display: flex;
   justify-content: center;
   margin-bottom: 3rem;
+  width: 85%;
 }
 
 #computerImgContainer {
-  width: 40%;
+  width: 60%;
   display: flex;
   align-items: center;
 }
@@ -223,31 +225,345 @@ header p {
 }
 
 #secondContainerTextContainer {
-  width: 32%;
+  width: 40%;
+  padding-right: 2rem;
 }
 
-#secondContainerTextContainer h2 {
+h2 {
   font-weight: 300;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.mediumOpac {
+  opacity: 0.5;
+}
+
+.opac75 {
+  opacity: 0.75;
 }
 
 #secondContainerTextContainer > div {
   margin: 2rem 0;
-  color: var(--gray);
   padding-left: 1.5rem;
   display: flex;
   flex-direction: column;
   border-left: 3px solid;
 }
-#secondContainerTextContainer > div:nth-child(2) {
-  color: black;
-}
-#secondContainer > button {
+
+.arrowButton {
   font-size: 1.05rem;
-  background-color: white;
   border: 2px solid;
   display: flex;
   gap: 5px;
   padding: 12.5px 20px;
   align-items: center;
   font-weight: 500;
+}
+
+#secondContainer .arrowButton {
+  margin-bottom: 2rem;
+}
+
+#thirdContainerInnerDiv {
+  display: flex;
+  padding: 2.5rem 0 6rem 0;
+  width: 85%;
+  gap: 10%;
+  margin: 0 auto;
+}
+
+#thirdContainerInnerDiv > div:first-child {
+  width: 100%;
+}
+
+#thirdContainerInnerDiv > div:first-child > p:nth-child(2) {
+  margin: 3rem 0 2rem 0;
+}
+
+.mt {
+  margin-top: 1rem;
+}
+
+#engagementsDiv {
+  width: 100%;
+}
+
+.engagement {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem 0 0.6rem 0;
+  border-bottom: 1px solid;
+}
+
+.engagement > h3 {
+  font-size: 1.7rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+#engagementsDiv > p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+/* /// FOURTH CONTAINER /// */
+
+#fourthContainer {
+  padding-bottom: 8rem;
+}
+#fourthContainerInnerDiv {
+  display: flex;
+  padding: 8rem 5.5rem 5.5rem 5rem;
+  align-items: center;
+  width: 85%;
+  margin: 0 auto;
+}
+
+#piggyContainer {
+  width: 50%;
+  height: 350px;
+  -webkit-mask: url("../../assets/startup/piggyBank.svg") no-repeat center;
+  mask: url("../../assets/startup/news/piggyBank.svg") no-repeat center;
+}
+#moneyGoesW {
+  width: 50%;
+}
+
+#moneyGoesW > h3 {
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+#moneyGoesW > div {
+  display: flex;
+  padding-left: 20px;
+  flex-direction: column;
+  border-left: 3px solid;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+#moneyGoesW > p {
+  margin: 1rem 0 3rem 0;
+}
+
+.moneyGoesDetail > p:first-child {
+  margin-top: 0.8rem;
+}
+.moneyGoesDetail > p:last-child {
+  margin-bottom: 0.8rem;
+}
+
+#obtainPriceButton {
+  margin: 0 auto;
+}
+
+/* /// FIFTHCONTAINER /// */
+
+#fifthContainer {
+  display: flex;
+}
+
+#fifthCText {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6rem 5rem;
+  box-sizing: border-box;
+}
+
+#fifthCText p {
+  margin: 2.3rem 0;
+  font-size: 0.95rem;
+}
+
+#fifthCText button {
+  margin: 0 auto 2.5rem 0;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.05rem;
+}
+
+#fifthCText .googleReview {
+  margin: 0;
+}
+#fifthCText .googleReview > p {
+  margin: 0;
+}
+
+#fifthCCarou {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  max-width: 50%;
+}
+
+#carouWrapper {
+  animation: scroll 30s linear infinite;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  width: calc(340px * 12 + 40px);
+}
+
+.carouReview {
+  border-radius: 8px;
+  max-height: 50%;
+  min-height: 50%;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  min-width: 340px;
+  justify-content: space-evenly;
+  padding: 0 25px;
+  background-color: white;
+  color: black;
+}
+
+.avatarDiv {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.avatarDiv p {
+  font-size: 0.8rem;
+  color: "black";
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc((380px * 5 + 250px) * -1));
+  }
+}
+
+/* /// SIXTH CONTAINER /// */
+
+#sixthContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10rem 5.5rem 5.5rem 5rem;
+}
+
+#sixthContainer > p {
+  margin: 1rem 0 4rem 0;
+  width: 60%;
+}
+
+#conseillerDivContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 88%;
+}
+
+.conseillerDiv {
+  width: 23%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+#sixthContainer > .conseillerDiv > p {
+  margin: 0;
+}
+.conseillerName {
+  margin-bottom: 0.2rem;
+  margin-top: 0.8rem;
+}
+
+.conseillerImgContainer {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+}
+.conseillerImgContainer.one {
+  background-image: url("../../assets/startup/Arthur.png");
+  background-size: contain;
+}
+.conseillerImgContainer.two {
+  background-image: url("../../assets/startup/Myriam.png");
+  background-size: contain;
+}
+.conseillerImgContainer.three {
+  background-image: url("../../assets/startup/hughes.png");
+  background-size: contain;
+}
+.conseillerImgContainer.four {
+  background-image: url("../../assets/startup/luisa.png");
+  background-size: contain;
+}
+
+.small {
+  font-size: 0.8rem;
+}
+
+#sixthContainer button {
+  margin-top: 3rem;
+}
+
+/* //// FOOTER //// */
+
+#footerContainerInnerDiv {
+  width: 85%;
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+#footerContainerInnerDiv #logoFooter {
+  font-family: "Righteous";
+  text-decoration: none;
+  font-size: 3rem;
+  line-height: 1;
+}
+
+#footerContainerInnerDiv {
+  display: flex;
+}
+
+#footerContainerInnerDiv > div {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-top: 3rem;
+}
+#footerContainerInnerDiv p {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+#footerContainerInnerDiv > :nth-child(1) {
+  width: 27%;
+  padding-right: 6rem;
+  padding-top: 0;
+}
+#footerContainerInnerDiv > :nth-child(2) {
+  width: 23%;
+  padding-right: 3rem;
+}
+#footerContainerInnerDiv > :nth-child(3) {
+  width: 23%;
+  padding-right: 3rem;
+}
+#footerContainerInnerDiv > :nth-child(4) {
+  width: 27%;
+}
+
+#footerContainerInnerDiv .topCategoryFooter {
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }

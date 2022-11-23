@@ -1,11 +1,11 @@
-import "./Startup.css";
 import { BsFillTriangleFill } from "react-icons/bs";
 import "../../assets/startup/cellFrame.png";
+import "./Startup.css";
 
-function TriangleIcon() {
+function TriangleIcon(color) {
   return (
     <BsFillTriangleFill
-      color="white"
+      color={color}
       style={{ transform: "rotate(180deg)", margin: "0 0 2px 5px" }}
       size=".4rem"
     />
@@ -21,19 +21,19 @@ export default function NavContainer({ colors }) {
       <ul id="navBarLeftUl">
         <li>
           Produits
-          <TriangleIcon />
+          <TriangleIcon color={font1} />
         </li>
         <li>
           Engagements
-          <TriangleIcon />
+          <TriangleIcon color={font1} />
         </li>
         <li>
           Aide
-          <TriangleIcon />
+          <TriangleIcon color={font1} />
         </li>
         <li>
           Avis Client
-          <TriangleIcon />
+          <TriangleIcon color={font1} />
         </li>
       </ul>
       <ul id="navBarRight">
@@ -42,7 +42,7 @@ export default function NavContainer({ colors }) {
           <button
             type="button"
             className="navButton"
-            style={{ color: background1 }}
+            style={{ color: background1, backgroundColor: background2 }}
           >
             Obtenir mon prix
           </button>

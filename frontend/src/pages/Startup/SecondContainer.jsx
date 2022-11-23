@@ -5,7 +5,10 @@ import "./Startup.css";
 export default function SecondContainer({ colors }) {
   const { background1, background2, background3, font1, font2 } = colors;
   return (
-    <div id="secondContainer">
+    <div
+      id="secondContainer"
+      style={{ backgroundColor: background2, color: font2 }}
+    >
       <div id="secondContainerInnerDiv">
         <div id="computerImgContainer">
           <img src={computerSet} alt="" />
@@ -19,14 +22,14 @@ export default function SecondContainer({ colors }) {
               pour vous en quelques clics
             </p>
           </div>
-          <div>
+          <div className="mediumOpac">
             <h3>7 jours sur 7</h3>
             <p>
               Toujours à vos côtés : des équipes vous répondent tous les jours
               (même dimanche) en moins de 100 secondes
             </p>
           </div>
-          <div>
+          <div className="mediumOpac">
             <h3>2x plus rapide</h3>
             <p>
               Un pépin chez vous ? Vous êtes remboursé avant même d'avoir dit
@@ -37,8 +40,8 @@ export default function SecondContainer({ colors }) {
       </div>
       <button
         type="button"
-        style={{ color: background1 }}
-        className="navButton "
+        style={{ color: background1, backgroundColor: "transparent" }}
+        className="navButton arrowButton"
       >
         <HiArrowRight size="1.4rem" /* style={{maxHeight: "230px"}} */ />
         Mon devis en 2 minutes
